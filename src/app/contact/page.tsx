@@ -5,11 +5,11 @@ import { SITE_NAME } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Inquire about wedding makeup services with Colleen Mahoney. Serving Boston, Cape Cod, the North Shore, the Berkshires, and all of New England.",
+    "Inquire about wedding makeup services with Colleen. Serving Boston, Cape Cod, the North Shore, the Berkshires, and all of New England.",
   openGraph: {
     title: "Contact",
     description:
-      "Inquire about wedding makeup with Colleen Mahoney Beauty.",
+      "Inquire about wedding makeup with Glamour By Colleen.",
     url: "/contact",
     siteName: SITE_NAME,
     locale: "en_US",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact | Colleen Mahoney Beauty",
+    title: "Contact | Glamour By Colleen",
     description:
       "Get in touch about wedding makeup services — Boston, Cape Cod, and New England.",
   },
@@ -48,10 +48,10 @@ export default function ContactPage() {
           Prefer email? Reach me directly at{" "}
           {/* PLACEHOLDER — replace with real email */}
           <a
-            href="mailto:hello@colleenmahoneybeauty.com"
+            href="mailto:hello@glamourbycolleen.com"
             className="text-claret transition-colors hover:text-oxblood"
           >
-            hello@colleenmahoneybeauty.com
+            hello@glamourbycolleen.com
           </a>
           .
         </p>

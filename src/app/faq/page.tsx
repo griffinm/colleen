@@ -12,11 +12,11 @@ import { SITE_NAME } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Frequently asked questions about wedding makeup with Colleen Mahoney — booking, trials, pricing, products, travel, and more.",
+    "Frequently asked questions about wedding makeup with Colleen — booking, trials, pricing, products, travel, and more.",
   openGraph: {
     title: "FAQ",
     description:
-      "Frequently asked questions about wedding makeup with Colleen Mahoney Beauty.",
+      "Frequently asked questions about wedding makeup with Glamour By Colleen.",
     url: "/faq",
     siteName: SITE_NAME,
     locale: "en_US",
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FAQ | Colleen Mahoney Beauty",
+    title: "FAQ | Glamour By Colleen",
     description:
-      "Common questions about booking bridal makeup with Colleen Mahoney.",
+      "Common questions about booking bridal makeup with Colleen.",
   },
   alternates: {
     canonical: "/faq",

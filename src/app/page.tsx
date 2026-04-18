@@ -13,13 +13,13 @@ import { testimonials } from "@/content/testimonials";
 import { BASE_URL, SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Colleen Mahoney | Wedding Makeup Artist | Boston & Cape Cod",
+  title: "Glamour By Colleen | Wedding Makeup Artist | Boston & Cape Cod",
   description:
-    "Bridal makeup artist serving Boston, Cape Cod, the North Shore, the Berkshires, and all of New England. Personalized wedding day makeup by Colleen Mahoney.",
+    "Bridal makeup artist serving Boston, Cape Cod, the North Shore, the Berkshires, and all of New England. Personalized wedding day makeup by Colleen.",
   openGraph: {
-    title: "Colleen Mahoney | Wedding Makeup Artist",
+    title: "Glamour By Colleen | Wedding Makeup Artist",
     description:
-      "Bridal makeup artist serving Boston, Cape Cod, and all of New England. Personalized wedding day makeup by Colleen Mahoney.",
+      "Bridal makeup artist serving Boston, Cape Cod, and all of New England. Personalized wedding day makeup by Colleen.",
     url: "/",
     siteName: SITE_NAME,
     locale: "en_US",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Colleen Mahoney | Wedding Makeup Artist",
+    title: "Glamour By Colleen | Wedding Makeup Artist",
     description:
       "Bridal makeup artist serving Boston, Cape Cod, and all of New England.",
   },
@@ -92,8 +92,8 @@ export default function Home() {
     image: heroImage.src, // PLACEHOLDER — stock image; swap for real hero once delivered
     sameAs: [
       // PLACEHOLDER — add real social profile URLs
-      "https://instagram.com/colleenmahoneybeauty",
-      "https://theknot.com/marketplace/colleen-mahoney-beauty",
+      "https://instagram.com/glamourbycolleen",
+      "https://theknot.com/marketplace/glamour-by-colleen",
     ],
   };
 

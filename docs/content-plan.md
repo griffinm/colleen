@@ -1,4 +1,4 @@
-# Colleen Mahoney — Wedding Makeup Website
+# Glamour By Colleen — Wedding Makeup Website
 
 **Content Plan**
 Prepared April 2026

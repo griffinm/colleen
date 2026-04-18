@@ -15,7 +15,7 @@ export function Footer() {
               href="/"
               className="font-serif text-2xl font-medium tracking-tight"
             >
-              Colleen Mahoney
+              Glamour By Colleen
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-smoke">
               Wedding makeup artist serving Boston, Cape Cod, the North Shore,
@@ -80,10 +80,10 @@ export function Footer() {
               <li>
                 {/* PLACEHOLDER — replace with real email */}
                 <a
-                  href="mailto:hello@colleenmahoneybeauty.com"
+                  href="mailto:hello@glamourbycolleen.com"
                   className="text-sm text-smoke transition-colors hover:text-bone"
                 >
-                  hello@colleenmahoneybeauty.com
+                  hello@glamourbycolleen.com
                 </a>
               </li>
             </ul>
@@ -93,7 +93,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 border-t border-smoke/20 pt-8 text-center text-xs text-smoke">
           <p>
-            &copy; {new Date().getFullYear()} Colleen Mahoney Beauty. All rights
+            &copy; {new Date().getFullYear()} Glamour By Colleen. All rights
             reserved.
           </p>
         </div>

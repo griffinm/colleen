@@ -7,11 +7,11 @@ import { SITE_NAME } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "About Colleen",
   description:
-    "Meet Colleen Mahoney — a former MRI technician turned full-time bridal makeup artist serving Boston, Cape Cod, and all of New England.",
+    "Meet Colleen — a former MRI technician turned full-time bridal makeup artist serving Boston, Cape Cod, and all of New England.",
   openGraph: {
     title: "About Colleen",
     description:
-      "Meet Colleen Mahoney — a former MRI technician turned full-time bridal makeup artist serving Boston, Cape Cod, and all of New England.",
+      "Meet Colleen — a former MRI technician turned full-time bridal makeup artist serving Boston, Cape Cod, and all of New England.",
     url: "/about",
     siteName: SITE_NAME,
     locale: "en_US",
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Colleen | Colleen Mahoney Beauty",
+    title: "About Colleen | Glamour By Colleen",
     description:
-      "Meet Colleen Mahoney — a former MRI tech turned bridal makeup artist in Boston and Cape Cod.",
+      "Meet Colleen — a former MRI tech turned bridal makeup artist in Boston and Cape Cod.",
   },
   alternates: {
     canonical: "/about",

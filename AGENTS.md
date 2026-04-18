@@ -10,7 +10,9 @@ Guidance for Claude Code working in this repository. Read this file in full at t
 
 ## 1. Project overview
 
-This repo is the marketing website for **Colleen Mahoney**, a solo wedding makeup artist serving the **Boston and Cape Cod area of Massachusetts**. The site's single job is to convert a bride who is researching vendors into someone who submits an inquiry. Everything on the site should be evaluated against that goal.
+This repo is the marketing website for **Glamour By Colleen** — the public-facing brand of **Colleen Mahoney**, a solo wedding makeup artist serving the **Boston and Cape Cod area of Massachusetts**. The site's single job is to convert a bride who is researching vendors into someone who submits an inquiry. Everything on the site should be evaluated against that goal.
+
+**Brand vs. person:** "Glamour By Colleen" is the brand — use it in nav, footer, page titles, OG/Twitter, and structured data. "Colleen" (first name only) is how she speaks in the first-person body copy. Both are correct; never use "Colleen Mahoney" as the site/brand name.
 
 A companion document, `wedding_makeup_website_analysis.docx`, contains a competitive analysis of seven peer sites. The strategic decisions in this file are derived from that research. When in doubt on a content, structure, or design decision, re-read the relevant section of that document before guessing.
 
@@ -104,8 +106,8 @@ Local SEO matters more than any other acquisition channel for this business. Eve
 
 ### 9.1 Metadata and page titles
 
-- Every route **must** export a `generateMetadata` function (or a static `metadata` object) with a unique, descriptive `title` and `description`. No placeholders like "Home | Colleen Mahoney" or empty strings.
-- Titles should follow the pattern: `{Page-specific phrase} | Colleen Mahoney — Wedding Makeup Artist, Boston & Cape Cod`. Keep under 60 characters where possible.
+- Every route **must** export a `generateMetadata` function (or a static `metadata` object) with a unique, descriptive `title` and `description`. No placeholders like "Home | Glamour By Colleen" or empty strings.
+- Titles should follow the pattern: `{Page-specific phrase} | Glamour By Colleen — Wedding Makeup Artist, Boston & Cape Cod`. Keep under 60 characters where possible.
 - Meta descriptions should be 120–155 characters, written as a compelling sentence (not keyword-stuffed), and unique per page.
 - Include a canonical URL on every page (`alternates.canonical` in Next metadata).
 

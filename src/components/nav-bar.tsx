@@ -38,7 +38,7 @@ export function NavBar() {
           href="/"
           className="font-serif text-2xl font-medium tracking-tight text-ink"
         >
-          Colleen Mahoney
+          Glamour By Colleen
         </Link>
 
         {/* Desktop nav links */}

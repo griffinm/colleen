@@ -9,11 +9,11 @@ import { SITE_NAME } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Real weddings, real brides. Browse Colleen Mahoney's bridal makeup portfolio — organized by wedding across Boston, Cape Cod, and New England.",
+    "Real weddings, real brides. Browse Colleen's bridal makeup portfolio — organized by wedding across Boston, Cape Cod, and New England.",
   openGraph: {
     title: "Portfolio",
     description:
-      "Browse Colleen Mahoney's bridal makeup portfolio — real weddings across Boston, Cape Cod, and New England.",
+      "Browse Colleen's bridal makeup portfolio — real weddings across Boston, Cape Cod, and New England.",
     url: "/portfolio",
     siteName: SITE_NAME,
     locale: "en_US",
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portfolio | Colleen Mahoney Beauty",
+    title: "Portfolio | Glamour By Colleen",
     description:
-      "Real weddings, real brides — bridal makeup portfolio by Colleen Mahoney.",
+      "Real weddings, real brides — bridal makeup portfolio by Colleen.",
   },
   alternates: {
     canonical: "/portfolio",

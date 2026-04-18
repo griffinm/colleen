@@ -24,12 +24,12 @@ const cormorantGaramond = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Colleen Mahoney Beauty",
-    default: "Colleen Mahoney | Wedding Makeup Artist | Boston & Cape Cod",
+    template: "%s | Glamour By Colleen",
+    default: "Glamour By Colleen | Wedding Makeup Artist | Boston & Cape Cod",
   },
   description:
-    "Wedding makeup artist serving Boston, Cape Cod, and all of New England. Personalized bridal makeup by Colleen Mahoney.",
-  metadataBase: new URL("https://colleenmahoneybeauty.com"), // TODO: update before launch
+    "Wedding makeup artist serving Boston, Cape Cod, and all of New England. Personalized bridal makeup by Colleen.",
+  metadataBase: new URL("https://glamourbycolleen.com"), // TODO: update before launch
 };
 
 export default function RootLayout({

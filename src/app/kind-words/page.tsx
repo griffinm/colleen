@@ -10,11 +10,11 @@ import { SITE_NAME } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Kind Words",
   description:
-    "What brides say about working with Colleen Mahoney — real testimonials from weddings across Boston, Cape Cod, and New England.",
+    "What brides say about working with Colleen — real testimonials from weddings across Boston, Cape Cod, and New England.",
   openGraph: {
     title: "Kind Words",
     description:
-      "Real testimonials from brides who worked with Colleen Mahoney Beauty.",
+      "Real testimonials from brides who worked with Glamour By Colleen.",
     url: "/kind-words",
     siteName: SITE_NAME,
     locale: "en_US",
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kind Words | Colleen Mahoney Beauty",
+    title: "Kind Words | Glamour By Colleen",
     description:
-      "What brides say about working with Colleen Mahoney.",
+      "What brides say about working with Colleen.",
   },
   alternates: {
     canonical: "/kind-words",
