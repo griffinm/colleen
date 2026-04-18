@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { navLinks, ctaLink } from "@/content/navigation";
 
@@ -11,13 +12,16 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand column */}
           <div>
-            <Link
-              href="/"
-              className="font-serif text-2xl font-medium tracking-tight"
-            >
-              Glamour By Colleen
+            <Link href="/" aria-label="Glamour By Colleen — home" className="inline-block">
+              <Image
+                src="/brand/lockup-light.svg"
+                alt="Glamour By Colleen"
+                width={270}
+                height={40}
+                className="h-10 w-auto"
+              />
             </Link>
-            <p className="mt-3 text-sm leading-relaxed text-smoke">
+            <p className="mt-4 text-sm leading-relaxed text-smoke">
               Wedding makeup artist serving Boston, Cape Cod, the North Shore,
               the Berkshires, and all of New England.
             </p>

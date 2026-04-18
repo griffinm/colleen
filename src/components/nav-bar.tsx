@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -34,11 +35,15 @@ export function NavBar() {
         aria-label="Main navigation"
       >
         {/* Brand */}
-        <Link
-          href="/"
-          className="font-serif text-2xl font-medium tracking-tight text-ink"
-        >
-          Glamour By Colleen
+        <Link href="/" aria-label="Glamour By Colleen — home" className="shrink-0">
+          <Image
+            src="/brand/lockup-primary.svg"
+            alt="Glamour By Colleen"
+            width={270}
+            height={40}
+            priority
+            className="h-9 w-auto sm:h-10"
+          />
         </Link>
 
         {/* Desktop nav links */}
