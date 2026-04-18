@@ -100,15 +100,53 @@ Concrete anti-patterns identified in the research. Do not reproduce these in thi
 
 ## 9. SEO and performance
 
-Local SEO matters more than any other acquisition channel for this business. Required:
+Local SEO matters more than any other acquisition channel for this business. Every page and every component should be built with the following rules in mind.
 
-- `LocalBusiness` schema.org structured data on the home page, including the full service area.
-- Each service area (Boston, Cape Cod, and any specific towns worth ranking for) mentioned in natural copy, not stuffed into a footer.
-- A `sitemap.xml` and `robots.txt` generated via Next's metadata API.
-- `generateMetadata` on every route with real titles and descriptions — no auto-generated "Home | Colleen Mahoney" placeholders.
-- Open Graph images for social sharing (a bride sending a link to her mom or maid of honor is a real traffic source).
+### 9.1 Metadata and page titles
+
+- Every route **must** export a `generateMetadata` function (or a static `metadata` object) with a unique, descriptive `title` and `description`. No placeholders like "Home | Colleen Mahoney" or empty strings.
+- Titles should follow the pattern: `{Page-specific phrase} | Colleen Mahoney — Wedding Makeup Artist, Boston & Cape Cod`. Keep under 60 characters where possible.
+- Meta descriptions should be 120–155 characters, written as a compelling sentence (not keyword-stuffed), and unique per page.
+- Include a canonical URL on every page (`alternates.canonical` in Next metadata).
+
+### 9.2 Open Graph and social tags
+
+- Every route must set `openGraph` metadata: `title`, `description`, `url`, `siteName`, `images` (at least one 1200×630 image), `locale`, and `type` (`website` for the home page, `article` or `profile` where appropriate).
+- Every route must set `twitter` metadata: `card: "summary_large_image"`, `title`, `description`, and `images`.
+- OG images should be real photography (not generic brand cards) — a bride sharing a link to her maid of honor should see a compelling preview. Generate or provide a default OG image for pages that lack a page-specific one.
+
+### 9.3 Structured data
+
+- The home page must include `LocalBusiness` schema.org JSON-LD with: `name`, `description`, `url`, `telephone` (if available), `address`, `areaServed` (Boston, Cape Cod, and specific towns), `image`, `priceRange`, and `sameAs` (links to Google Business, Instagram, The Knot, etc.).
+- The FAQ page must include `FAQPage` schema.org JSON-LD with every question/answer pair.
+- Portfolio wedding pages should include `ImageGallery` or `ImageObject` structured data where practical.
+- Inject structured data via a `<script type="application/ld+json">` tag in the page's `<head>` (use Next's metadata API or a layout-level component).
+
+### 9.4 Semantic HTML and accessibility
+
+- Use correct heading hierarchy on every page: one `<h1>` per page, followed by `<h2>`, `<h3>`, etc. in order. Never skip levels for styling purposes — use CSS instead.
+- Use semantic landmarks: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`. Do not build the page out of generic `<div>` soup.
+- Every `<img>` (via `next/image`) must have a meaningful `alt` attribute. For portfolio images, describe the look, setting, and season — not just "bride." Decorative images get `alt=""` and `aria-hidden="true"`.
+- All interactive elements (links, buttons, form inputs) must be keyboard-navigable with visible focus states.
+- Form fields must have associated `<label>` elements (not just placeholder text). Error messages must be programmatically associated with their inputs via `aria-describedby`.
+- Color contrast must meet WCAG AA (4.5:1 for body text, 3:1 for large text). Verify against the actual palette, not assumptions.
+- Use `aria-current="page"` on the active navigation link.
+- Skip-to-content link as the first focusable element in the layout.
+
+### 9.5 Local SEO and content
+
+- Each service area (Boston, Cape Cod, and specific towns worth ranking for — Chatham, Osterville, Falmouth, Provincetown, etc.) must be mentioned in natural body copy, not just stuffed into a footer or meta tags.
+- The site must generate a `sitemap.xml` and `robots.txt` via Next's metadata API.
+- Internal linking: every page should link to at least two other pages on the site. The portfolio and FAQ pages are natural link targets from service and home pages.
+
+### 9.6 Performance
 
 Performance targets: Lighthouse Performance > 95 on mobile, LCP < 2.5s on the home page. Portfolio images are the main risk — optimize aggressively and lazy-load below-the-fold galleries.
+
+- Preload the hero image with `priority` on `next/image`.
+- Serve images in AVIF/WebP via Vercel image optimization or Cloudinary.
+- No render-blocking external stylesheets or font links — use `next/font` exclusively.
+- Minimize client-side JavaScript. If a component doesn't need interactivity, keep it a server component.
 
 ## 10. Working norms
 

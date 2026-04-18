@@ -1,12 +1,199 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { MessageSquare, Palette, Heart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { CTABanner } from "@/components/cta-banner";
+import { TestimonialCard } from "@/components/testimonial-card";
+import { testimonials } from "@/content/testimonials";
+import { BASE_URL, SITE_NAME } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  title: "Colleen Mahoney | Wedding Makeup Artist | Boston & Cape Cod",
+  description:
+    "Bridal makeup artist serving Boston, Cape Cod, the North Shore, the Berkshires, and all of New England. Personalized wedding day makeup by Colleen Mahoney.",
+  openGraph: {
+    title: "Colleen Mahoney | Wedding Makeup Artist",
+    description:
+      "Bridal makeup artist serving Boston, Cape Cod, and all of New England. Personalized wedding day makeup by Colleen Mahoney.",
+    url: "/",
+    siteName: SITE_NAME,
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Colleen Mahoney | Wedding Makeup Artist",
+    description:
+      "Bridal makeup artist serving Boston, Cape Cod, and all of New England.",
+  },
+  alternates: {
+    canonical: "/",
+  },
+};
+
+const steps = [
+  {
+    icon: MessageSquare,
+    title: "Inquire",
+    description:
+      "Tell me about your wedding \u2014 date, venue, how many people need makeup. I\u2019ll get back to you within 48 hours with availability and a quote.",
+  },
+  {
+    icon: Palette,
+    title: "Trial",
+    description:
+      "We meet 6\u20138 weeks before the wedding to design your look together. Bring inspiration photos, your veil if you have it, and an open mind.",
+  },
+  {
+    icon: Heart,
+    title: "Wedding Day",
+    description:
+      "I arrive at your venue, set up a calm corner, and work through your party on a schedule we\u2019ve built together. You get to enjoy the morning.",
+  },
+];
+
+// Use the first testimonial for the social proof preview
+const featuredTestimonial = testimonials[0];
+
 export default function Home() {
+  const localBusinessJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: SITE_NAME,
+    description:
+      "Wedding makeup artist serving Boston, Cape Cod, the North Shore, the Berkshires, and all of New England.",
+    url: BASE_URL,
+    // PLACEHOLDER — add real phone when available
+    // telephone: "+1-XXX-XXX-XXXX",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Boston",
+      addressRegion: "MA",
+      addressCountry: "US",
+    },
+    areaServed: [
+      { "@type": "City", name: "Boston" },
+      { "@type": "Place", name: "Cape Cod" },
+      { "@type": "Place", name: "North Shore" },
+      { "@type": "Place", name: "The Berkshires" },
+      { "@type": "City", name: "Chatham" },
+      { "@type": "City", name: "Osterville" },
+      { "@type": "City", name: "Falmouth" },
+      { "@type": "City", name: "Provincetown" },
+      { "@type": "City", name: "Gloucester" },
+      { "@type": "City", name: "Ipswich" },
+    ],
+    priceRange: "$$", // PLACEHOLDER
+    image: `${BASE_URL}/images/hero.jpg`, // PLACEHOLDER
+    sameAs: [
+      // PLACEHOLDER — add real social profile URLs
+      "https://instagram.com/colleenmahoneybeauty",
+      "https://theknot.com/marketplace/colleen-mahoney-beauty",
+    ],
+  };
+
   return (
-    <main className="flex flex-1 flex-col items-center justify-center px-6 py-24">
-      <h1 className="font-serif text-5xl font-light tracking-tight">
-        Colleen Mahoney
-      </h1>
-      <p className="mt-4 text-lg text-muted-foreground">
-        Wedding Makeup Artist — Boston &amp; Cape Cod
-      </p>
-    </main>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessJsonLd),
+        }}
+      />
+
+      {/* Hero */}
+      <section className="bg-oxblood text-bone">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 md:items-center md:py-28">
+          <div>
+            <h1 className="font-serif text-4xl font-light leading-tight md:text-5xl lg:text-6xl">
+              Bridal makeup for Boston and the Cape.
+            </h1>
+            <p className="mt-6 text-lg leading-relaxed text-bone/85">
+              Hi, I&apos;m Colleen &mdash; a former MRI tech who traded scrubs
+              for a makeup kit, and I&apos;ve been making brides feel like
+              themselves on the biggest day of their lives ever since.
+            </p>
+            <div className="mt-8">
+              <Button
+                className="bg-bone text-oxblood hover:bg-parchment"
+                size="lg"
+                render={<Link href="/contact" />}
+              >
+                Check my availability &rarr;
+              </Button>
+            </div>
+          </div>
+          {/* PLACEHOLDER — replace with hero image using next/image with priority */}
+          <div className="aspect-[3/4] rounded-xl bg-claret/30" />
+        </div>
+      </section>
+
+      {/* Signature Style Strip */}
+      <section className="bg-parchment px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            {/* PLACEHOLDER — replace with portfolio preview images */}
+            {[1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="aspect-[4/5] rounded-lg bg-rule"
+              />
+            ))}
+          </div>
+          <p className="mx-auto mt-10 max-w-2xl text-center font-serif text-xl leading-relaxed italic text-ink">
+            {/* PLACEHOLDER — needs Colleen's own words */}
+            &ldquo;Natural, luminous, and unmistakably you &mdash; the kind of
+            makeup that photographs beautifully and still looks like you at the
+            end of the night.&rdquo;
+          </p>
+        </div>
+      </section>
+
+      {/* How It Works — 3-Step Process */}
+      <section className="bg-bone px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="text-center font-serif text-3xl font-light text-ink md:text-4xl">
+            How it works
+          </h2>
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            {steps.map((step) => (
+              <div key={step.title} className="text-center">
+                <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-blush text-oxblood">
+                  <step.icon className="size-6" />
+                </div>
+                <h3 className="mt-5 font-serif text-xl font-medium text-ink">
+                  {step.title}
+                </h3>
+                <p className="mt-3 leading-relaxed text-smoke">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof Strip */}
+      <section className="bg-blush px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-3xl text-center">
+          {/* PLACEHOLDER — update with real count */}
+          <p className="mb-10 text-sm font-medium uppercase tracking-widest text-oxblood">
+            Trusted by 200+ brides across Massachusetts
+          </p>
+          <TestimonialCard testimonial={featuredTestimonial} />
+          <div className="mt-8">
+            <Link
+              href="/kind-words"
+              className="text-sm font-medium text-claret transition-colors hover:text-oxblood"
+            >
+              Read more kind words &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Banner */}
+      <CTABanner />
+    </>
   );
 }

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Cormorant_Garamond } from "next/font/google";
+import { NavBar } from "@/components/nav-bar";
+import { Footer } from "@/components/footer";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -21,9 +23,13 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Colleen Mahoney | Wedding Makeup Artist | Boston & Cape Cod",
+  title: {
+    template: "%s | Colleen Mahoney Beauty",
+    default: "Colleen Mahoney | Wedding Makeup Artist | Boston & Cape Cod",
+  },
   description:
-    "Wedding makeup artist serving Boston and Cape Cod, Massachusetts.",
+    "Wedding makeup artist serving Boston, Cape Cod, and all of New England. Personalized bridal makeup by Colleen Mahoney.",
+  metadataBase: new URL("https://colleenmahoneybeauty.com"), // TODO: update before launch
 };
 
 export default function RootLayout({
@@ -36,7 +42,19 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${cormorantGaramond.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-oxblood focus:px-4 focus:py-2 focus:text-bone"
+        >
+          Skip to content
+        </a>
+        <NavBar />
+        <main id="main-content" className="flex-1">
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
   );
 }
