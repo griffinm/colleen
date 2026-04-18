@@ -21,6 +21,17 @@ export const heroImage: PlaceholderImage = {
   alt: "A bride and groom stand close on a pebble beach, her long veil drifting behind them toward the surf.",
 };
 
+// PLACEHOLDER — until real photography arrives, reuse the home hero photo cropped
+// to the 1200×630 Open Graph ratio. Swap once brand photography is delivered; a
+// dedicated social share image (e.g. lockup + portrait) usually outperforms a
+// reused hero crop.
+export const ogImage = {
+  url: `https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=1200&h=630&q=80&auto=format&fit=crop`,
+  width: 1200,
+  height: 630,
+  alt: "A bride and groom stand close on a pebble beach, her long veil drifting behind them toward the surf.",
+} as const;
+
 export const aboutPortrait: PlaceholderImage = {
   src: unsplash("1544005313-94ddf0286df2", 900),
   alt: "A woman with loose brown hair smiles warmly into late-afternoon light, standing outdoors in an open field.",

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Reveal } from "@/components/reveal";
 
 interface CTABannerProps {
   headline?: string;
@@ -14,7 +15,7 @@ export function CTABanner({
 }: CTABannerProps) {
   return (
     <section className="bg-oxblood px-6 py-20 text-center text-bone">
-      <div className="mx-auto max-w-2xl">
+      <Reveal className="mx-auto max-w-2xl">
         <h2 className="font-serif text-3xl font-light leading-snug md:text-4xl">
           {headline}
         </h2>
@@ -27,7 +28,7 @@ export function CTABanner({
             {buttonText} &rarr;
           </Button>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

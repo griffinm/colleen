@@ -6,7 +6,9 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { CTABanner } from "@/components/cta-banner";
+import { Reveal } from "@/components/reveal";
 import { faqEntries } from "@/content/faq";
+import { ogImage } from "@/content/placeholder-images";
 import { SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -21,12 +23,14 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     locale: "en_US",
     type: "website",
+    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "FAQ | Glamour By Colleen",
     description:
       "Common questions about booking bridal makeup with Colleen.",
+    images: [ogImage.url],
   },
   alternates: {
     canonical: "/faq",
@@ -70,7 +74,7 @@ export default function FaqPage() {
 
       {/* Accordion */}
       <section className="bg-bone px-6 pb-16 md:pb-20">
-        <div className="mx-auto max-w-3xl">
+        <Reveal className="mx-auto max-w-3xl">
           <Accordion>
             {faqEntries.map((entry, index) => (
               <AccordionItem key={index} className="border-rule">
@@ -83,7 +87,7 @@ export default function FaqPage() {
               </AccordionItem>
             ))}
           </Accordion>
-        </div>
+        </Reveal>
       </section>
 
       {/* CTA Banner */}

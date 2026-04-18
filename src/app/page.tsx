@@ -4,9 +4,11 @@ import Link from "next/link";
 import { MessageSquare, Palette, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CTABanner } from "@/components/cta-banner";
+import { Reveal } from "@/components/reveal";
 import { TestimonialCard } from "@/components/testimonial-card";
 import {
   heroImage,
+  ogImage,
   signatureStyleImages,
 } from "@/content/placeholder-images";
 import { testimonials } from "@/content/testimonials";
@@ -24,12 +26,14 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     locale: "en_US",
     type: "website",
+    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "Glamour By Colleen | Wedding Makeup Artist",
     description:
       "Bridal makeup artist serving Boston, Cape Cod, and all of New England.",
+    images: [ogImage.url],
   },
   alternates: {
     canonical: "/",
@@ -107,7 +111,7 @@ export default function Home() {
       />
 
       {/* Hero */}
-      <section className="bg-oxblood text-bone">
+      <section className="-mt-[var(--nav-h)] bg-oxblood pt-[var(--nav-h)] text-bone">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 md:items-center md:py-28">
           <div>
             <h1 className="font-serif text-4xl font-light leading-tight md:text-5xl lg:text-6xl">
@@ -144,7 +148,7 @@ export default function Home() {
 
       {/* Signature Style Strip */}
       <section className="bg-parchment px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-7xl">
+        <Reveal className="mx-auto max-w-7xl">
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             {/* PLACEHOLDER — Unsplash stock images until signature-style portfolio photos arrive */}
             {signatureStyleImages.map((image) => (
@@ -168,12 +172,12 @@ export default function Home() {
             makeup that photographs beautifully and still looks like you at the
             end of the night.&rdquo;
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* How It Works — 3-Step Process */}
       <section className="bg-bone px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-7xl">
+        <Reveal className="mx-auto max-w-7xl">
           <h2 className="text-center font-serif text-3xl font-light text-ink md:text-4xl">
             How it works
           </h2>
@@ -192,12 +196,12 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Social Proof Strip */}
       <section className="bg-blush px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-3xl text-center">
+        <Reveal className="mx-auto max-w-3xl text-center">
           {/* PLACEHOLDER — update with real count */}
           <p className="mb-10 text-sm font-medium uppercase tracking-widest text-oxblood">
             Trusted by 200+ brides across Massachusetts
@@ -211,7 +215,7 @@ export default function Home() {
               Read more kind words &rarr;
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* CTA Banner */}

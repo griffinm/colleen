@@ -61,7 +61,10 @@ export default function RootLayout({
           Skip to content
         </a>
         <NavBar />
-        <main id="main-content" className="flex-1">
+        <main
+          id="main-content"
+          className="flex-1 pt-[var(--nav-h)]"
+        >
           {children}
         </main>
         <Footer />

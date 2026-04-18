@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
+import { ogImage } from "@/content/placeholder-images";
 import { SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -14,12 +15,14 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     locale: "en_US",
     type: "website",
+    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "Contact | Glamour By Colleen",
     description:
       "Get in touch about wedding makeup services — Boston, Cape Cod, and New England.",
+    images: [ogImage.url],
   },
   alternates: {
     canonical: "/contact",

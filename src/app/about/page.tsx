@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { CTABanner } from "@/components/cta-banner";
-import { aboutPortrait } from "@/content/placeholder-images";
+import { Reveal } from "@/components/reveal";
+import { aboutPortrait, ogImage } from "@/content/placeholder-images";
 import { SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -16,12 +17,14 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     locale: "en_US",
     type: "profile",
+    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "About Colleen | Glamour By Colleen",
     description:
       "Meet Colleen — a former MRI tech turned bridal makeup artist in Boston and Cape Cod.",
+    images: [ogImage.url],
   },
   alternates: {
     canonical: "/about",
@@ -74,7 +77,7 @@ export default function AboutPage() {
 
       {/* Philosophy */}
       <section className="bg-parchment px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-3xl text-center">
+        <Reveal className="mx-auto max-w-3xl text-center">
           {/* PLACEHOLDER — replace with Colleen's real philosophy */}
           <blockquote className="font-serif text-2xl leading-relaxed italic text-ink md:text-3xl">
             &ldquo;I have one job on your wedding day, and it isn&apos;t to make
@@ -83,12 +86,12 @@ export default function AboutPage() {
             <em className="not-italic font-medium">you</em> &mdash; the best,
             most photographable, most you version of you.&rdquo;
           </blockquote>
-        </div>
+        </Reveal>
       </section>
 
       {/* Personal */}
       <section className="bg-bone px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-3xl">
+        <Reveal className="mx-auto max-w-3xl">
           <h2 className="font-serif text-3xl font-light text-ink">
             Off the clock
           </h2>
@@ -101,12 +104,12 @@ export default function AboutPage() {
             who takes the craft seriously and doesn&apos;t take herself too
             seriously.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Why Solo Matters */}
       <section className="bg-blush px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-3xl">
+        <Reveal className="mx-auto max-w-3xl">
           <h2 className="font-serif text-3xl font-light text-oxblood">
             Why solo matters
           </h2>
@@ -118,7 +121,7 @@ export default function AboutPage() {
             that you mentioned your mom cries easily and you want makeup that
             can handle it.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* CTA Banner */}

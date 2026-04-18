@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
+import { Reveal } from "@/components/reveal";
+import { ogImage } from "@/content/placeholder-images";
 import { SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -14,12 +16,14 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     locale: "en_US",
     type: "website",
+    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "Weddings | Glamour By Colleen",
     description:
       "Wedding makeup services and pricing — Boston, Cape Cod, and all of New England.",
+    images: [ogImage.url],
   },
   alternates: {
     canonical: "/weddings",
@@ -65,7 +69,7 @@ export default function WeddingsPage() {
 
       {/* Process Step 1 */}
       <section className="bg-parchment px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-3xl">
+        <Reveal className="mx-auto max-w-3xl">
           <h2 className="font-serif text-3xl font-light text-ink">
             1. Inquire and book
           </h2>
@@ -84,12 +88,12 @@ export default function WeddingsPage() {
               day, so your date is exclusively yours.
             </p>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Process Step 2 */}
       <section className="bg-bone px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-3xl">
+        <Reveal className="mx-auto max-w-3xl">
           <h2 className="font-serif text-3xl font-light text-ink">
             2. The trial
           </h2>
@@ -108,12 +112,12 @@ export default function WeddingsPage() {
               over time and how it photographs in different light.
             </p>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Process Step 3 */}
       <section className="bg-parchment px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-3xl">
+        <Reveal className="mx-auto max-w-3xl">
           <h2 className="font-serif text-3xl font-light text-ink">
             3. Wedding day
           </h2>
@@ -134,12 +138,12 @@ export default function WeddingsPage() {
               the night.
             </p>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Pricing */}
       <section className="bg-bone px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-3xl">
+        <Reveal className="mx-auto max-w-3xl">
           <h2 className="font-serif text-3xl font-light text-ink">Pricing</h2>
           <p className="mt-6 leading-relaxed text-ink">
             Every wedding is a little different, and I&apos;d rather build a
@@ -153,12 +157,12 @@ export default function WeddingsPage() {
             from $XXX each. Travel fees may apply outside greater Boston and Cape
             Cod.]
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Embedded Contact Form */}
       <section className="bg-parchment px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-xl">
+        <Reveal className="mx-auto max-w-xl">
           <h2 className="text-center font-serif text-3xl font-light text-ink">
             Let&apos;s talk about your wedding.
           </h2>
@@ -168,7 +172,7 @@ export default function WeddingsPage() {
           <div className="mt-10">
             <ContactForm />
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );

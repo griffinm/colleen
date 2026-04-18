@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { CTABanner } from "@/components/cta-banner";
-import { behindTheScenesImages } from "@/content/placeholder-images";
+import { Reveal } from "@/components/reveal";
+import { behindTheScenesImages, ogImage } from "@/content/placeholder-images";
 import { portfolioEntries } from "@/content/portfolio";
 import { SITE_NAME } from "@/lib/constants";
 
@@ -18,12 +19,14 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     locale: "en_US",
     type: "website",
+    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "Portfolio | Glamour By Colleen",
     description:
       "Real weddings, real brides — bridal makeup portfolio by Colleen.",
+    images: [ogImage.url],
   },
   alternates: {
     canonical: "/portfolio",
@@ -54,8 +57,13 @@ export default function PortfolioPage() {
       <section className="bg-bone px-6 pb-16 md:pb-20">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 md:grid-cols-2">
-            {portfolioEntries.map((entry) => (
-              <article key={entry.slug} className="group">
+            {portfolioEntries.map((entry, index) => (
+              <Reveal
+                key={entry.slug}
+                delay={(index % 2) * 120}
+                className="group"
+              >
+                <article>
                 {/* PLACEHOLDER — Unsplash stock image stands in for the wedding gallery preview */}
                 <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-parchment transition-transform group-hover:scale-[1.01]">
                   <Image
@@ -85,7 +93,8 @@ export default function PortfolioPage() {
                     See the gallery &rarr;
                   </Link>
                 </div>
-              </article>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -93,7 +102,7 @@ export default function PortfolioPage() {
 
       {/* Behind the Scenes */}
       <section className="bg-parchment px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-7xl">
+        <Reveal className="mx-auto max-w-7xl">
           <h2 className="font-serif text-3xl font-light text-ink">
             Behind the scenes
           </h2>
@@ -119,7 +128,7 @@ export default function PortfolioPage() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* CTA Banner */}

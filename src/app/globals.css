@@ -93,6 +93,7 @@
   --smoke: #57534e;
   --ink: #1c1917;
   --brass: #b45309;
+  --nav-h: 4.5rem;
   --radius: 0.625rem;
   --sidebar: oklch(0.96 0.008 75);
   --sidebar-foreground: oklch(0.25 0.02 50);

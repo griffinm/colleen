@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { CTABanner } from "@/components/cta-banner";
+import { Reveal } from "@/components/reveal";
 import { TestimonialCard } from "@/components/testimonial-card";
+import { ogImage } from "@/content/placeholder-images";
 import {
   testimonials,
   type TestimonialCategory,
@@ -19,12 +21,14 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     locale: "en_US",
     type: "website",
+    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "Kind Words | Glamour By Colleen",
     description:
       "What brides say about working with Colleen.",
+    images: [ogImage.url],
   },
   alternates: {
     canonical: "/kind-words",
@@ -75,7 +79,7 @@ export default function KindWordsPage() {
               index % 2 === 0 ? "bg-parchment" : "bg-bone"
             }`}
           >
-            <div className="mx-auto max-w-3xl">
+            <Reveal className="mx-auto max-w-3xl">
               <h2 className="font-serif text-2xl font-light text-oxblood md:text-3xl">
                 {category.heading}
               </h2>
@@ -87,7 +91,7 @@ export default function KindWordsPage() {
                   />
                 ))}
               </div>
-            </div>
+            </Reveal>
           </section>
         );
       })}
