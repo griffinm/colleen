@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 240" fill="none">
+  <circle cx="110" cy="55" r="44" stroke="#fafaf9" stroke-width="1.5"/>
+  <text font-family="'Playfair Display', Georgia, serif" font-size="36" font-weight="700" fill="#fafaf9" x="109" y="53" text-anchor="middle" dominant-baseline="central" letter-spacing="0">GC</text>
+  <line x1="60" y1="115" x2="160" y2="115" stroke="#b45309" stroke-width="0.8"/>
+  <text font-family="'Playfair Display', Georgia, serif" font-size="16" font-weight="700" fill="#fafaf9" x="110" y="140" text-anchor="middle" letter-spacing="2.5">GLAMOUR BY</text>
+  <text font-family="'Playfair Display', Georgia, serif" font-size="20" font-weight="700" fill="#fafaf9" x="110" y="166" text-anchor="middle" letter-spacing="2.5">COLLEEN</text>
+  <text font-family="'Playfair Display', Georgia, serif" font-size="9" font-weight="400" fill="#57534e" x="110" y="192" text-anchor="middle" letter-spacing="4">BRIDAL BEAUTY</text>
+</svg>
