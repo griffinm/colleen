@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { MessageSquare, Palette, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CTABanner } from "@/components/cta-banner";
 import { TestimonialCard } from "@/components/testimonial-card";
+import {
+  heroImage,
+  signatureStyleImages,
+} from "@/content/placeholder-images";
 import { testimonials } from "@/content/testimonials";
 import { BASE_URL, SITE_NAME } from "@/lib/constants";
 
@@ -84,7 +89,7 @@ export default function Home() {
       { "@type": "City", name: "Ipswich" },
     ],
     priceRange: "$$", // PLACEHOLDER
-    image: `${BASE_URL}/images/hero.jpg`, // PLACEHOLDER
+    image: heroImage.src, // PLACEHOLDER — stock image; swap for real hero once delivered
     sameAs: [
       // PLACEHOLDER — add real social profile URLs
       "https://instagram.com/colleenmahoneybeauty",
@@ -123,8 +128,17 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          {/* PLACEHOLDER — replace with hero image using next/image with priority */}
-          <div className="aspect-[3/4] rounded-xl bg-claret/30" />
+          {/* PLACEHOLDER — Unsplash stock image until real hero photography arrives */}
+          <div className="relative aspect-[3/4] overflow-hidden rounded-xl bg-claret/30">
+            <Image
+              src={heroImage.src}
+              alt={heroImage.alt}
+              fill
+              priority
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -132,12 +146,20 @@ export default function Home() {
       <section className="bg-parchment px-6 py-16 md:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            {/* PLACEHOLDER — replace with portfolio preview images */}
-            {[1, 2, 3, 4].map((i) => (
+            {/* PLACEHOLDER — Unsplash stock images until signature-style portfolio photos arrive */}
+            {signatureStyleImages.map((image) => (
               <div
-                key={i}
-                className="aspect-[4/5] rounded-lg bg-rule"
-              />
+                key={image.src}
+                className="relative aspect-[4/5] overflow-hidden rounded-lg bg-rule"
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  sizes="(min-width: 768px) 25vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
             ))}
           </div>
           <p className="mx-auto mt-10 max-w-2xl text-center font-serif text-xl leading-relaxed italic text-ink">

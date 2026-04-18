@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { CTABanner } from "@/components/cta-banner";
+import { behindTheScenesImages } from "@/content/placeholder-images";
 import { portfolioEntries } from "@/content/portfolio";
 import { SITE_NAME } from "@/lib/constants";
 
@@ -54,8 +56,16 @@ export default function PortfolioPage() {
           <div className="grid gap-10 md:grid-cols-2">
             {portfolioEntries.map((entry) => (
               <article key={entry.slug} className="group">
-                {/* PLACEHOLDER — replace with next/image gallery preview */}
-                <div className="aspect-[4/3] overflow-hidden rounded-xl bg-parchment transition-transform group-hover:scale-[1.01]" />
+                {/* PLACEHOLDER — Unsplash stock image stands in for the wedding gallery preview */}
+                <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-parchment transition-transform group-hover:scale-[1.01]">
+                  <Image
+                    src={entry.image.src}
+                    alt={entry.image.alt}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
                 <div className="mt-5">
                   <h2 className="font-serif text-2xl font-medium text-ink">
                     {entry.title}
@@ -93,12 +103,20 @@ export default function PortfolioPage() {
             last-minute happy tears.
           </p>
           <div className="mt-8 flex gap-4 overflow-x-auto pb-4">
-            {/* PLACEHOLDER — replace with candid morning-of images */}
-            {[1, 2, 3, 4, 5].map((i) => (
+            {/* PLACEHOLDER — Unsplash stock images stand in for real morning-of candids */}
+            {behindTheScenesImages.map((image) => (
               <div
-                key={i}
-                className="aspect-[4/3] w-72 shrink-0 rounded-lg bg-rule"
-              />
+                key={image.src}
+                className="relative aspect-[4/3] w-72 shrink-0 overflow-hidden rounded-lg bg-rule"
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  sizes="288px"
+                  className="object-cover"
+                />
+              </div>
             ))}
           </div>
         </div>

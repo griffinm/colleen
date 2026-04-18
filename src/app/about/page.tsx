@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { CTABanner } from "@/components/cta-banner";
+import { aboutPortrait } from "@/content/placeholder-images";
 import { SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -32,8 +34,16 @@ export default function AboutPage() {
       {/* Opening */}
       <section className="bg-bone px-6 py-16 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2 md:items-center">
-          {/* PLACEHOLDER — replace with a real photo of Colleen (personal, natural, outdoors) */}
-          <div className="aspect-[3/4] rounded-xl bg-parchment" />
+          {/* PLACEHOLDER — Unsplash stock portrait stands in until Colleen's real photo arrives */}
+          <div className="relative aspect-[3/4] overflow-hidden rounded-xl bg-parchment">
+            <Image
+              src={aboutPortrait.src}
+              alt={aboutPortrait.alt}
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
 
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-brass">
