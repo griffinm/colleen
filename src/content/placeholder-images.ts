@@ -47,8 +47,8 @@ export const ogImage = {
 } as const;
 
 export const aboutPortrait: PlaceholderImage = {
-  src: "/photos/img-4982.jpg",
-  alt: "TODO(colleen): describe img-4982 — portrait of Colleen for the About page.",
+  src: "/photos/img-3110.jpg",
+  alt: "TODO(colleen): describe img-3108 — portrait of Colleen for the About page.",
 };
 
 export const signatureStyleImages: PlaceholderImage[] = [

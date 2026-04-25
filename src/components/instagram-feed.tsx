@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { Reveal } from "@/components/reveal";
+
 interface BeholdSize {
   mediaUrl: string;
   height: number;
@@ -73,7 +75,7 @@ const FEED: BeholdFeed = {
         full: { mediaUrl: "https://behold.pictures/pWzu26weoROjEWUrbpNmJ3s2P282/J8w0SQYwmgTVjmBYfGfY/18104022014303074/full.jpg", height: 1136, width: 640 },
       },
       caption: "",
-      prunedCaption: "Beautiful inside and out! Engagement glam shoot for this beauty.",
+      prunedCaption: "Beautiful inside and out — engagement glam shoot.",
       hashtags: [],
       mentions: [],
       colorPalette: { dominant: "205,176,161", muted: "173,80,88", mutedLight: "205,169,161", mutedDark: "44,43,60", vibrant: "173,115,80", vibrantLight: "237,169,150", vibrantDark: "9,15,30" },
@@ -93,7 +95,7 @@ const FEED: BeholdFeed = {
         full: { mediaUrl: "https://behold.pictures/pWzu26weoROjEWUrbpNmJ3s2P282/J8w0SQYwmgTVjmBYfGfY/18072981209207012/full.jpg", height: 1136, width: 640 },
       },
       caption: "",
-      prunedCaption: "How it started… VS how it’s going. This is your sign to never give up.",
+      prunedCaption: "How it started… vs. how it’s going. Your sign to never give up.",
       hashtags: [],
       mentions: [],
       colorPalette: { dominant: "94,50,78", muted: "167,97,91", mutedLight: "192,146,133", mutedDark: "78,51,90", vibrant: "228,108,53", vibrantLight: "239,179,153", vibrantDark: "148,50,26" },
@@ -113,7 +115,7 @@ const FEED: BeholdFeed = {
         full: { mediaUrl: "https://behold.pictures/pWzu26weoROjEWUrbpNmJ3s2P282/J8w0SQYwmgTVjmBYfGfY/18096983719996970/full.jpg", height: 1136, width: 640 },
       },
       caption: "",
-      prunedCaption: "Wedding season kicks off with a spring wedding! This girly pop wanted full glam.",
+      prunedCaption: "Wedding season opens with a spring bride — full glam.",
       hashtags: [],
       mentions: [],
       colorPalette: { dominant: "184,147,124", muted: "159,115,74", mutedLight: "175,173,172", mutedDark: "67,53,43", vibrant: "204,144,77", vibrantLight: "232,165,146", vibrantDark: "122,81,46" },
@@ -133,7 +135,7 @@ const FEED: BeholdFeed = {
         full: { mediaUrl: "https://behold.pictures/pWzu26weoROjEWUrbpNmJ3s2P282/J8w0SQYwmgTVjmBYfGfY/18093650045291178/full.jpg", height: 360, width: 640 },
       },
       caption: "",
-      prunedCaption: "Our hearts are still trying to catch up to this moment. Baptizing Spiro in Greece, surrounded by family.",
+      prunedCaption: "A baptism in Greece — surrounded by family, faith, and sea.",
       hashtags: [],
       mentions: [],
       colorPalette: { dominant: "233,168,171", muted: "87,148,171", mutedLight: "176,189,207", mutedDark: "45,65,87", vibrant: "245,194,64", vibrantLight: "236,177,184", vibrantDark: "110,6,18" },
@@ -153,7 +155,7 @@ const FEED: BeholdFeed = {
         full: { mediaUrl: "https://behold.pictures/pWzu26weoROjEWUrbpNmJ3s2P282/J8w0SQYwmgTVjmBYfGfY/17917334244266817/full.jpg", height: 1136, width: 640 },
       },
       caption: "",
-      prunedCaption: "Valentine’s Day pink glow.",
+      prunedCaption: "Valentine’s Day — pink glow and a soft, lit complexion.",
       hashtags: [],
       mentions: [],
       colorPalette: { dominant: "49,36,36", muted: "172,114,98", mutedLight: "219,196,183", mutedDark: "79,53,47", vibrant: "204,140,118", vibrantLight: "228,168,143", vibrantDark: "40,20,11" },
@@ -173,7 +175,7 @@ const FEED: BeholdFeed = {
         full: { mediaUrl: "https://behold.pictures/pWzu26weoROjEWUrbpNmJ3s2P282/J8w0SQYwmgTVjmBYfGfY/17990618081760760/full.jpg", height: 1688, width: 1350 },
       },
       caption: "",
-      prunedCaption: "This is not just a headshot — it’s your power photo. Polished, natural makeup that enhances your features.",
+      prunedCaption: "Power-photo headshots — polished, natural, unmistakably you.",
       hashtags: [],
       mentions: [],
       colorPalette: { dominant: "235,235,235", muted: "136,119,103", mutedLight: "208,194,188", mutedDark: "88,72,64", vibrant: "206,100,96", vibrantLight: "236,174,145", vibrantDark: "131,30,27" },
@@ -181,22 +183,66 @@ const FEED: BeholdFeed = {
   ],
 };
 
-function truncate(text: string, max = 80): string {
+function truncate(text: string, max: number): string {
   const clean = text.replace(/\s+/g, " ").trim();
-  if (clean.length <= max) return clean;
-  return clean.slice(0, max).trimEnd() + "…";
+  return clean.length <= max ? clean : `${clean.slice(0, max).trimEnd()}…`;
 }
 
-function PlayIcon() {
+function ReelBadge() {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
+    <span
       aria-hidden="true"
-      className="h-3.5 w-3.5"
+      className="absolute top-3 left-3 inline-flex items-center bg-brand-bg/85 px-2 py-1 text-[9px] font-medium uppercase tracking-[0.32em] text-brand-accent backdrop-blur-[2px]"
     >
-      <path d="M8 5v14l11-7z" />
-    </svg>
+      Reel
+    </span>
+  );
+}
+
+interface TileProps {
+  post: BeholdPost;
+  index: number;
+  sizes: string;
+}
+
+function Tile({ post, index, sizes }: TileProps) {
+  const src = post.sizes.medium.mediaUrl;
+  const isVideo = post.mediaType === "VIDEO" || post.isReel;
+  const caption = truncate(post.prunedCaption || "View on Instagram", 80);
+  const altText = post.prunedCaption
+    ? truncate(post.prunedCaption, 140)
+    : `Instagram post ${index + 1} by @${INSTAGRAM_HANDLE}`;
+
+  return (
+    <Link
+      href={post.permalink}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Open Instagram post: ${altText}`}
+      className="group block outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-4 focus-visible:ring-offset-brand-bg-alt"
+    >
+      <div className="relative aspect-square overflow-hidden bg-brand-bg">
+        <Image
+          src={src}
+          alt={altText}
+          fill
+          sizes={sizes}
+          className="object-cover transition-opacity duration-500 group-active:opacity-85 md:group-hover:opacity-90"
+        />
+        {isVideo && <ReelBadge />}
+      </div>
+
+      {/* Always-visible photo plate — italic Playfair caption beneath the frame */}
+      <figcaption className="mt-3 flex items-start gap-2.5 px-0.5">
+        <span
+          aria-hidden="true"
+          className="mt-2 h-px w-4 flex-shrink-0 bg-brand-text-primary/40 md:w-6"
+        />
+        <p className="font-serif text-[12.5px] leading-[1.45] text-brand-text-secondary italic md:text-[13px]">
+          {caption}
+        </p>
+      </figcaption>
+    </Link>
   );
 }
 
@@ -204,99 +250,61 @@ export default function InstagramFeed() {
   const posts = FEED.posts.slice(0, 6);
 
   return (
-    <section
-      aria-label="Instagram feed"
-      className="w-full bg-[#fafaf9] px-6 py-20"
-      style={{ fontFamily: "var(--font-sans, 'DM Sans', sans-serif)" }}
-    >
-      <div className="mx-auto max-w-6xl">
-        <header className="mb-10 flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p
-              className="text-xs font-medium uppercase tracking-[0.18em] text-[#b45309]"
-            >
-              From the studio
-            </p>
-            <h2
-              className="mt-2 text-3xl font-normal leading-tight text-[#1c1917] sm:text-4xl"
-              style={{
-                fontFamily:
-                  "var(--font-serif, 'Playfair Display', Georgia, serif)",
-              }}
-            >
-              Follow along
+    <section aria-label="Instagram feed" className="bg-brand-bg-alt">
+      <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 md:px-10 md:py-28">
+        <Reveal>
+          <div className="grid grid-cols-1 gap-y-5 md:grid-cols-12 md:items-end md:gap-x-10">
+            <h2 className="font-serif text-[clamp(2.25rem,9vw,6.5rem)] font-light leading-[0.95] tracking-[-0.01em] text-brand-text-primary md:col-span-8">
+              <span className="italic">Lately,</span> in the studio.
             </h2>
+            <div className="md:col-span-4 md:pb-3">
+              <p className="max-w-md text-[14px] leading-[1.6] text-brand-text-secondary md:text-[13.5px]">
+                Recent looks, behind-the-chair moments, and finished frames
+                from weddings and shoots around Boston and the Cape.
+              </p>
+              <Link
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-baseline gap-2 border-b border-brand-text-primary/30 pb-1 text-[11px] font-medium uppercase tracking-[0.28em] text-brand-text-primary active:text-brand-primary md:mt-5"
+              >
+                <span>@{INSTAGRAM_HANDLE}</span>
+                <span className="text-brand-primary">→</span>
+              </Link>
+            </div>
           </div>
-          <Link
-            href={INSTAGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Visit @${INSTAGRAM_HANDLE} on Instagram`}
-            className="text-sm font-medium text-[#881337] underline-offset-4 transition-colors hover:text-[#9f1239] hover:underline"
-          >
-            @{INSTAGRAM_HANDLE} &rarr;
-          </Link>
-        </header>
+        </Reveal>
 
-        <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-          {posts.map((post) => {
-            const src = post.sizes.medium.mediaUrl;
-            const alt = post.prunedCaption
-              ? truncate(post.prunedCaption, 140)
-              : `Instagram post by @${INSTAGRAM_HANDLE}`;
-            const overlayText = truncate(post.prunedCaption || "View on Instagram", 80);
-            const isVideo = post.mediaType === "VIDEO" || post.isReel;
-
-            return (
-              <li key={post.id} className="relative">
-                <Link
-                  href={post.permalink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Open Instagram post: ${alt}`}
-                  className="group relative block aspect-square overflow-hidden bg-[#f5f5f4] outline-none ring-offset-2 ring-offset-[#fafaf9] focus-visible:ring-2 focus-visible:ring-[#881337]"
-                >
-                  <Image
-                    src={src}
-                    alt={alt}
-                    fill
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 320px"
-                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-                  />
-
-                  {isVideo && (
-                    <span
-                      aria-hidden="true"
-                      className="absolute right-2 top-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#1c1917]/55 text-[#fafaf9] backdrop-blur-sm transition-opacity duration-200 group-hover:opacity-0"
-                    >
-                      <PlayIcon />
-                    </span>
-                  )}
-
-                  <div
-                    aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 flex items-center justify-center bg-[#1c1917]/0 p-4 opacity-0 transition-all duration-200 ease-out group-hover:bg-[#1c1917]/55 group-hover:opacity-100"
-                  >
-                    <p className="text-center text-sm leading-snug text-[#fafaf9]">
-                      {overlayText}
-                    </p>
-                  </div>
-                </Link>
+        {/* Mobile-first grid: 2-up on phones, 3-up from md.
+            Captions sit beneath each frame as a permanent magazine plate. */}
+        <Reveal delay={120}>
+          <ul className="mt-12 grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-5 md:mt-16 md:grid-cols-3 md:gap-x-6 md:gap-y-12">
+            {posts.map((post, i) => (
+              <li key={post.id}>
+                <Tile
+                  post={post}
+                  index={i}
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                />
               </li>
-            );
-          })}
-        </ul>
+            ))}
+          </ul>
+        </Reveal>
 
-        <div className="mt-10 text-center">
-          <Link
-            href={INSTAGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-[#9f1239] underline-offset-4 hover:underline"
-          >
-            See more on Instagram &rarr;
-          </Link>
-        </div>
+        <Reveal delay={240}>
+          <div className="mt-12 text-center md:mt-16">
+            <Link
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-baseline gap-2 font-serif text-base text-brand-text-primary active:text-brand-primary md:text-lg"
+            >
+              <span className="italic">See more</span>
+              <span className="text-brand-text-secondary">on Instagram</span>
+              <span className="text-brand-primary">→</span>
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
