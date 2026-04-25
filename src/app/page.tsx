@@ -115,7 +115,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 md:items-center md:py-28">
           <div>
             <h1 className="font-serif text-4xl font-light leading-tight md:text-5xl lg:text-6xl">
-              Bridal makeup for Boston and the Cape.
+              Bridal makeup for Boston and Beyond.
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-bone/85">
               Hi, I&apos;m Colleen &mdash; a former MRI tech who traded scrubs
