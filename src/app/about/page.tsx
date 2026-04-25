@@ -35,10 +35,10 @@ export default function AboutPage() {
   return (
     <>
       {/* Opening */}
-      <section className="bg-bone px-6 py-16 md:py-24">
+      <section className="bg-brand-bg px-6 py-16 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2 md:items-center">
           {/* PLACEHOLDER — Unsplash stock portrait stands in until Colleen's real photo arrives */}
-          <div className="relative aspect-[3/4] overflow-hidden rounded-xl bg-parchment">
+          <div className="relative aspect-[3/4] overflow-hidden rounded-xl bg-brand-bg-alt">
             <Image
               src={aboutPortrait.src}
               alt={aboutPortrait.alt}
@@ -49,13 +49,13 @@ export default function AboutPage() {
           </div>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-brass">
+            <p className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
               About
             </p>
-            <h1 className="mt-4 font-serif text-4xl font-light leading-tight text-ink md:text-5xl">
+            <h1 className="mt-4 font-serif text-4xl font-light leading-tight text-brand-text-primary md:text-5xl">
               From scrubs to brushes.
             </h1>
-            <div className="mt-6 space-y-4 leading-relaxed text-ink">
+            <div className="mt-6 space-y-4 leading-relaxed text-brand-text-primary">
               <p>
                 I spent years as an MRI technician. It was steady, detailed
                 work, and I was good at it &mdash; but every morning I was
@@ -76,10 +76,10 @@ export default function AboutPage() {
       </section>
 
       {/* Philosophy */}
-      <section className="bg-parchment px-6 py-16 md:py-20">
+      <section className="bg-brand-bg-alt px-6 py-16 md:py-20">
         <Reveal className="mx-auto max-w-3xl text-center">
           {/* PLACEHOLDER — replace with Colleen's real philosophy */}
-          <blockquote className="font-serif text-2xl leading-relaxed italic text-ink md:text-3xl">
+          <blockquote className="font-serif text-2xl leading-relaxed italic text-brand-text-primary md:text-3xl">
             &ldquo;I have one job on your wedding day, and it isn&apos;t to make
             you look like someone else. It&apos;s to make sure that when your
             partner sees you at the end of the aisle, they see{" "}
@@ -90,12 +90,12 @@ export default function AboutPage() {
       </section>
 
       {/* Personal */}
-      <section className="bg-bone px-6 py-16 md:py-20">
+      <section className="bg-brand-bg px-6 py-16 md:py-20">
         <Reveal className="mx-auto max-w-3xl">
-          <h2 className="font-serif text-3xl font-light text-ink">
+          <h2 className="font-serif text-3xl font-light text-brand-text-primary">
             Off the clock
           </h2>
-          <p className="mt-6 leading-relaxed text-ink">
+          <p className="mt-6 leading-relaxed text-brand-text-primary">
             When I&apos;m not working, I&apos;m with my husband Yanni and our
             son Spiro &mdash;{" "}
             {/* PLACEHOLDER — one or two specific, charming details */}
@@ -108,12 +108,12 @@ export default function AboutPage() {
       </section>
 
       {/* Why Solo Matters */}
-      <section className="bg-blush px-6 py-16 md:py-20">
+      <section className="bg-brand-soft px-6 py-16 md:py-20">
         <Reveal className="mx-auto max-w-3xl">
-          <h2 className="font-serif text-3xl font-light text-oxblood">
+          <h2 className="font-serif text-3xl font-light text-brand-primary">
             Why solo matters
           </h2>
-          <p className="mt-6 text-lg leading-relaxed text-ink">
+          <p className="mt-6 text-lg leading-relaxed text-brand-text-primary">
             A lot of bigger studios can&apos;t tell you exactly who will show up
             on your wedding day until a week before &mdash; sometimes the
             morning of. I can. It&apos;ll be me. I&apos;ll be the one you met

@@ -37,15 +37,15 @@ export default function PortfolioPage() {
   return (
     <>
       {/* Intro */}
-      <section className="bg-bone px-6 py-16 md:py-24">
+      <section className="bg-brand-bg px-6 py-16 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-brass">
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
             Portfolio
           </p>
-          <h1 className="mt-4 font-serif text-4xl font-light text-ink md:text-5xl">
+          <h1 className="mt-4 font-serif text-4xl font-light text-brand-text-primary md:text-5xl">
             Real weddings, real brides.
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-smoke">
+          <p className="mt-4 max-w-2xl text-lg text-brand-text-secondary">
             Every wedding is different &mdash; different skin, different light,
             different vibe. Here&apos;s a look at some of the brides I&apos;ve
             worked with and the looks we created together.
@@ -54,7 +54,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Wedding Grid */}
-      <section className="bg-bone px-6 pb-16 md:pb-20">
+      <section className="bg-brand-bg px-6 pb-16 md:pb-20">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 md:grid-cols-2">
             {portfolioEntries.map((entry, index) => (
@@ -65,7 +65,7 @@ export default function PortfolioPage() {
               >
                 <article>
                 {/* PLACEHOLDER — Unsplash stock image stands in for the wedding gallery preview */}
-                <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-parchment transition-transform group-hover:scale-[1.01]">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-brand-bg-alt transition-transform group-hover:scale-[1.01]">
                   <Image
                     src={entry.image.src}
                     alt={entry.image.alt}
@@ -75,20 +75,20 @@ export default function PortfolioPage() {
                   />
                 </div>
                 <div className="mt-5">
-                  <h2 className="font-serif text-2xl font-medium text-ink">
+                  <h2 className="font-serif text-2xl font-medium text-brand-text-primary">
                     {entry.title}
                   </h2>
-                  <p className="mt-1 text-sm text-smoke">
+                  <p className="mt-1 text-sm text-brand-text-secondary">
                     {entry.venue}, {entry.location} &middot; {entry.date}
                   </p>
-                  <p className="mt-3 leading-relaxed text-ink">
+                  <p className="mt-3 leading-relaxed text-brand-text-primary">
                     {entry.description}
                   </p>
-                  <p className="mt-2 text-sm text-smoke">{entry.partySize}</p>
+                  <p className="mt-2 text-sm text-brand-text-secondary">{entry.partySize}</p>
                   {/* PLACEHOLDER — link to individual gallery when dynamic routes are built */}
                   <Link
                     href={`/portfolio#${entry.slug}`}
-                    className="mt-3 inline-block text-sm font-medium text-claret transition-colors hover:text-oxblood"
+                    className="mt-3 inline-block text-sm font-medium text-brand-primary-hover transition-colors hover:text-brand-primary"
                   >
                     See the gallery &rarr;
                   </Link>
@@ -101,12 +101,12 @@ export default function PortfolioPage() {
       </section>
 
       {/* Behind the Scenes */}
-      <section className="bg-parchment px-6 py-16 md:py-20">
+      <section className="bg-brand-bg-alt px-6 py-16 md:py-20">
         <Reveal className="mx-auto max-w-7xl">
-          <h2 className="font-serif text-3xl font-light text-ink">
+          <h2 className="font-serif text-3xl font-light text-brand-text-primary">
             Behind the scenes
           </h2>
-          <p className="mt-4 max-w-2xl text-smoke">
+          <p className="mt-4 max-w-2xl text-brand-text-secondary">
             The getting-ready hours are some of my favorite moments of the
             day &mdash; the calm before the ceremony, the laughter, the
             last-minute happy tears.
@@ -116,7 +116,7 @@ export default function PortfolioPage() {
             {behindTheScenesImages.map((image) => (
               <div
                 key={image.src}
-                className="relative aspect-[4/3] w-72 shrink-0 overflow-hidden rounded-lg bg-rule"
+                className="relative aspect-[4/3] w-72 shrink-0 overflow-hidden rounded-lg bg-brand-border"
               >
                 <Image
                   src={image.src}

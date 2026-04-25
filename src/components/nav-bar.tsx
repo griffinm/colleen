@@ -62,14 +62,13 @@ export function NavBar() {
         "fixed inset-x-0 top-0 z-50 h-[var(--nav-h)] transition-[background-color,border-color,backdrop-filter] duration-500 ease-out",
         transparent
           ? "border-b border-transparent bg-transparent"
-          : "border-b border-rule bg-bone/95 backdrop-blur-md",
+          : "border-b border-brand-border bg-brand-bg/95 backdrop-blur-md",
       )}
     >
       <nav
         className="mx-auto flex h-full max-w-7xl items-center justify-between px-6"
         aria-label="Main navigation"
       >
-        {/* Brand — two stacked SVGs, crossfaded between dark-hero and solid states */}
         <Link
           href="/"
           aria-label="Glamour By Colleen — home"
@@ -81,21 +80,7 @@ export function NavBar() {
             fill
             priority
             sizes="270px"
-            className={cn(
-              "object-contain object-left transition-opacity duration-500",
-              transparent ? "opacity-0" : "opacity-100",
-            )}
-          />
-          <Image
-            src="/brand/lockup-light.svg"
-            alt=""
-            aria-hidden="true"
-            fill
-            sizes="270px"
-            className={cn(
-              "object-contain object-left transition-opacity duration-500",
-              transparent ? "opacity-100" : "opacity-0",
-            )}
+            className="object-contain object-left"
           />
         </Link>
 
@@ -112,11 +97,11 @@ export function NavBar() {
                     linkBase,
                     transparent
                       ? active
-                        ? "text-bone"
-                        : "text-bone/75 hover:text-bone"
+                        ? "text-brand-text-primary"
+                        : "text-brand-text-primary/75 hover:text-brand-text-primary"
                       : active
-                        ? "text-oxblood"
-                        : "text-smoke hover:text-ink",
+                        ? "text-brand-primary"
+                        : "text-brand-text-secondary hover:text-brand-text-primary",
                   )}
                 >
                   {link.label}
@@ -133,8 +118,8 @@ export function NavBar() {
               "hidden md:inline-flex",
               "h-9 rounded-md px-4 text-[11px] font-medium uppercase tracking-[0.22em] transition-colors duration-300",
               transparent
-                ? "border border-bone/60 bg-transparent text-bone hover:border-bone hover:bg-bone hover:text-oxblood"
-                : "bg-oxblood text-bone hover:bg-claret",
+                ? "border border-brand-text-primary/60 bg-transparent text-brand-text-primary hover:border-brand-text-primary hover:bg-brand-text-primary hover:text-brand-bg"
+                : "bg-brand-primary text-brand-bg hover:bg-brand-primary-hover",
             )}
             render={<Link href={ctaLink.href} />}
           >
@@ -147,8 +132,8 @@ export function NavBar() {
               "inline-flex items-center justify-center transition-colors duration-300 md:hidden",
               "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 rounded-sm",
               transparent
-                ? "text-bone focus-visible:ring-bone focus-visible:ring-offset-oxblood"
-                : "text-ink focus-visible:ring-oxblood focus-visible:ring-offset-bone",
+                ? "text-brand-text-primary focus-visible:ring-brand-text-primary focus-visible:ring-offset-brand-primary"
+                : "text-brand-text-primary focus-visible:ring-brand-primary focus-visible:ring-offset-brand-bg",
             )}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-expanded={mobileOpen}
@@ -165,7 +150,7 @@ export function NavBar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="border-t border-rule bg-bone md:hidden">
+        <div className="border-t border-brand-border bg-brand-bg md:hidden">
           <ul className="flex flex-col gap-1 px-6 py-4">
             {navLinks.map((link) => {
               const active = pathname === link.href;
@@ -175,8 +160,8 @@ export function NavBar() {
                     href={link.href}
                     aria-current={active ? "page" : undefined}
                     className={cn(
-                      "block rounded-lg px-4 py-3 text-[11px] font-medium uppercase tracking-[0.22em] transition-colors hover:bg-parchment",
-                      active ? "text-oxblood" : "text-ink",
+                      "block rounded-lg px-4 py-3 text-[11px] font-medium uppercase tracking-[0.22em] transition-colors hover:bg-brand-bg-alt",
+                      active ? "text-brand-primary" : "text-brand-text-primary",
                     )}
                   >
                     {link.label}
@@ -186,7 +171,7 @@ export function NavBar() {
             })}
             <li className="mt-2">
               <Button
-                className="h-11 w-full rounded-md bg-oxblood text-[11px] font-medium uppercase tracking-[0.22em] text-bone hover:bg-claret"
+                className="h-11 w-full rounded-md bg-brand-primary text-[11px] font-medium uppercase tracking-[0.22em] text-brand-bg hover:bg-brand-primary-hover"
                 render={<Link href={ctaLink.href} />}
               >
                 {ctaLink.label}

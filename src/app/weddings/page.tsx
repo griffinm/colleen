@@ -34,15 +34,15 @@ export default function WeddingsPage() {
   return (
     <>
       {/* Intro */}
-      <section className="bg-bone px-6 py-16 md:py-24">
+      <section className="bg-brand-bg px-6 py-16 md:py-24">
         <div className="mx-auto max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-brass">
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
             Weddings
           </p>
-          <h1 className="mt-4 font-serif text-4xl font-light leading-tight text-ink md:text-5xl">
+          <h1 className="mt-4 font-serif text-4xl font-light leading-tight text-brand-text-primary md:text-5xl">
             What to expect when you book me.
           </h1>
-          <div className="mt-8 space-y-4 leading-relaxed text-ink">
+          <div className="mt-8 space-y-4 leading-relaxed text-brand-text-primary">
             <p>
               I work with brides across the Boston area, Cape Cod, the North
               Shore, the Berkshires, and anywhere else in New England a wedding
@@ -68,12 +68,12 @@ export default function WeddingsPage() {
       </section>
 
       {/* Process Step 1 */}
-      <section className="bg-parchment px-6 py-16 md:py-20">
+      <section className="bg-brand-bg-alt px-6 py-16 md:py-20">
         <Reveal className="mx-auto max-w-3xl">
-          <h2 className="font-serif text-3xl font-light text-ink">
+          <h2 className="font-serif text-3xl font-light text-brand-text-primary">
             1. Inquire and book
           </h2>
-          <div className="mt-6 space-y-4 leading-relaxed text-ink">
+          <div className="mt-6 space-y-4 leading-relaxed text-brand-text-primary">
             <p>
               {/* PLACEHOLDER — replace with real inquiry flow details */}
               Fill out the form at the bottom of this page or send me an email.
@@ -92,12 +92,12 @@ export default function WeddingsPage() {
       </section>
 
       {/* Process Step 2 */}
-      <section className="bg-bone px-6 py-16 md:py-20">
+      <section className="bg-brand-bg px-6 py-16 md:py-20">
         <Reveal className="mx-auto max-w-3xl">
-          <h2 className="font-serif text-3xl font-light text-ink">
+          <h2 className="font-serif text-3xl font-light text-brand-text-primary">
             2. The trial
           </h2>
-          <div className="mt-6 space-y-4 leading-relaxed text-ink">
+          <div className="mt-6 space-y-4 leading-relaxed text-brand-text-primary">
             <p>
               {/* PLACEHOLDER — replace with real trial details */}
               We meet about six to eight weeks before your wedding. Bring your
@@ -116,12 +116,12 @@ export default function WeddingsPage() {
       </section>
 
       {/* Process Step 3 */}
-      <section className="bg-parchment px-6 py-16 md:py-20">
+      <section className="bg-brand-bg-alt px-6 py-16 md:py-20">
         <Reveal className="mx-auto max-w-3xl">
-          <h2 className="font-serif text-3xl font-light text-ink">
+          <h2 className="font-serif text-3xl font-light text-brand-text-primary">
             3. Wedding day
           </h2>
-          <div className="mt-6 space-y-4 leading-relaxed text-ink">
+          <div className="mt-6 space-y-4 leading-relaxed text-brand-text-primary">
             <p>
               {/* PLACEHOLDER — replace with real wedding day details */}
               I arrive at your venue early &mdash; usually several hours before
@@ -142,17 +142,17 @@ export default function WeddingsPage() {
       </section>
 
       {/* Pricing */}
-      <section className="bg-bone px-6 py-16 md:py-20">
+      <section className="bg-brand-bg px-6 py-16 md:py-20">
         <Reveal className="mx-auto max-w-3xl">
-          <h2 className="font-serif text-3xl font-light text-ink">Pricing</h2>
-          <p className="mt-6 leading-relaxed text-ink">
+          <h2 className="font-serif text-3xl font-light text-brand-text-primary">Pricing</h2>
+          <p className="mt-6 leading-relaxed text-brand-text-primary">
             Every wedding is a little different, and I&apos;d rather build a
             quote that fits your actual day than list a dozen packages that might
             not. Tell me what you&apos;re thinking and I&apos;ll come back with
             something fair.
           </p>
           {/* PLACEHOLDER — add starting-from pricing when available */}
-          <p className="mt-4 text-sm text-smoke">
+          <p className="mt-4 text-sm text-brand-text-secondary">
             [Placeholder: Bridal makeup starts at $XXX. Additional party members
             from $XXX each. Travel fees may apply outside greater Boston and Cape
             Cod.]
@@ -161,12 +161,12 @@ export default function WeddingsPage() {
       </section>
 
       {/* Embedded Contact Form */}
-      <section className="bg-parchment px-6 py-16 md:py-20">
+      <section className="bg-brand-bg-alt px-6 py-16 md:py-20">
         <Reveal className="mx-auto max-w-xl">
-          <h2 className="text-center font-serif text-3xl font-light text-ink">
+          <h2 className="text-center font-serif text-3xl font-light text-brand-text-primary">
             Let&apos;s talk about your wedding.
           </h2>
-          <p className="mt-4 text-center text-smoke">
+          <p className="mt-4 text-center text-brand-text-secondary">
             Fill this out and I&apos;ll get back to you within 48 hours.
           </p>
           <div className="mt-10">

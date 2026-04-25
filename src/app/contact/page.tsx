@@ -31,12 +31,12 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="bg-bone px-6 py-16 md:py-24">
+    <section className="bg-brand-bg px-6 py-16 md:py-24">
       <div className="mx-auto max-w-xl">
-        <h1 className="font-serif text-4xl font-light text-ink md:text-5xl">
+        <h1 className="font-serif text-4xl font-light text-brand-text-primary md:text-5xl">
           Let&apos;s talk about your wedding.
         </h1>
-        <p className="mt-6 leading-relaxed text-smoke">
+        <p className="mt-6 leading-relaxed text-brand-text-secondary">
           Fill this out and I&apos;ll get back to you within 48 hours &mdash;
           usually sooner. No pressure, no hard sell. If we&apos;re a fit,
           we&apos;ll schedule a quick call. If we&apos;re not, I&apos;ll happily
@@ -47,12 +47,12 @@ export default function ContactPage() {
           <ContactForm />
         </div>
 
-        <p className="mt-10 text-center text-sm text-smoke">
+        <p className="mt-10 text-center text-sm text-brand-text-secondary">
           Prefer email? Reach me directly at{" "}
           {/* PLACEHOLDER — replace with real email */}
           <a
             href="mailto:hello@glamourbycolleen.com"
-            className="text-claret transition-colors hover:text-oxblood"
+            className="text-brand-primary-hover transition-colors hover:text-brand-primary"
           >
             hello@glamourbycolleen.com
           </a>

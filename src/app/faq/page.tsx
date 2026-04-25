@@ -61,27 +61,27 @@ export default function FaqPage() {
       />
 
       {/* Intro */}
-      <section className="bg-bone px-6 py-16 md:py-24">
+      <section className="bg-brand-bg px-6 py-16 md:py-24">
         <div className="mx-auto max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-brass">
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
             FAQ
           </p>
-          <h1 className="mt-4 font-serif text-4xl font-light text-ink md:text-5xl">
+          <h1 className="mt-4 font-serif text-4xl font-light text-brand-text-primary md:text-5xl">
             Questions I hear all the time.
           </h1>
         </div>
       </section>
 
       {/* Accordion */}
-      <section className="bg-bone px-6 pb-16 md:pb-20">
+      <section className="bg-brand-bg px-6 pb-16 md:pb-20">
         <Reveal className="mx-auto max-w-3xl">
           <Accordion>
             {faqEntries.map((entry, index) => (
-              <AccordionItem key={index} className="border-rule">
-                <AccordionTrigger className="py-5 text-base font-medium text-ink">
+              <AccordionItem key={index} className="border-brand-border">
+                <AccordionTrigger className="py-5 text-base font-medium text-brand-text-primary">
                   {entry.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-smoke">
+                <AccordionContent className="text-brand-text-secondary">
                   <p>{entry.answer}</p>
                 </AccordionContent>
               </AccordionItem>
