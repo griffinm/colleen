@@ -6,7 +6,7 @@ import { SITE_NAME } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Inquire about wedding makeup services with Colleen. Serving Boston, Cape Cod, the North Shore, the Berkshires, and all of New England.",
+    "Inquire about makeup services with Colleen for your wedding or event. Serving Boston, Cape Cod, the North Shore, the Berkshires, and all of New England.",
   openGraph: {
     title: "Contact",
     description:
@@ -34,7 +34,7 @@ export default function ContactPage() {
     <section className="bg-brand-bg px-6 py-16 md:py-24">
       <div className="mx-auto max-w-xl">
         <h1 className="font-serif text-4xl font-light text-brand-text-primary md:text-5xl">
-          Let&apos;s talk about your wedding.
+          Let&apos;s talk about your event.
         </h1>
         <p className="mt-6 leading-relaxed text-brand-text-secondary">
           Fill this out and I&apos;ll get back to you within 48 hours &mdash;
