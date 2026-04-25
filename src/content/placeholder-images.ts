@@ -36,20 +36,20 @@ export const heroImages: PlaceholderImage[] = [
 
 export const heroImage: PlaceholderImage = heroImages[0];
 
-// PLACEHOLDER — random landscape photo from the import standing in as the
-// social share card. A dedicated 1200×630 OG image (lockup + portrait) will
-// outperform a generic photo crop; swap once one is produced.
-export const ogImage = {
-  url: "/photos/img-5458.jpg",
-  width: 2400,
-  height: 1600,
-  alt: "TODO(colleen): describe img-5458 for social share preview.",
-} as const;
-
 export const aboutPortrait: PlaceholderImage = {
   src: "/photos/img-3110.jpg",
   alt: "TODO(colleen): describe img-3108 — portrait of Colleen for the About page.",
 };
+
+// PLACEHOLDER — reuses the About portrait as the social share card across all
+// pages. A dedicated 1200×630 OG image (lockup + portrait) will outperform a
+// portrait crop on most platforms; swap once one is produced.
+export const ogImage = {
+  url: aboutPortrait.src,
+  width: 1598,
+  height: 2400,
+  alt: aboutPortrait.alt,
+} as const;
 
 export const signatureStyleImages: PlaceholderImage[] = [
   {
@@ -70,25 +70,3 @@ export const signatureStyleImages: PlaceholderImage[] = [
   },
 ];
 
-export const behindTheScenesImages: PlaceholderImage[] = [
-  {
-    src: "/photos/img-4956.jpg",
-    alt: "TODO(colleen): describe img-4956.",
-  },
-  {
-    src: "/photos/four.jpg",
-    alt: "TODO(colleen): describe four.jpg.",
-  },
-  {
-    src: "/photos/img-0372.jpg",
-    alt: "TODO(colleen): describe img-0372.",
-  },
-  {
-    src: "/photos/img-8793.jpg",
-    alt: "TODO(colleen): describe img-8793.",
-  },
-  {
-    src: "/photos/img-0945.png",
-    alt: "TODO(colleen): describe img-0945.",
-  },
-];

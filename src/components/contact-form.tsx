@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [isWedding, setIsWedding] = useState(true);
   const [notSureDate, setNotSureDate] = useState(false);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -21,7 +23,10 @@ export function ContactForm() {
     const data = {
       name: formData.get("name"),
       email: formData.get("email"),
-      weddingDate: notSureDate ? "Not sure yet" : formData.get("weddingDate"),
+      isWedding,
+      ...(isWedding && {
+        weddingDate: notSureDate ? "Not sure yet" : formData.get("weddingDate"),
+      }),
       venue: formData.get("venue"),
       partySize: formData.get("partySize"),
       message: formData.get("message"),
@@ -97,32 +102,49 @@ export function ContactForm() {
         />
       </div>
 
-      {/* Wedding date */}
-      <div>
+      {/* Is this for a wedding? */}
+      <div className="flex items-center justify-between rounded-lg border border-brand-border bg-brand-bg-alt px-4 py-3">
         <label
-          htmlFor="weddingDate"
-          className="mb-1.5 block text-sm font-medium text-brand-text-primary"
+          htmlFor="isWedding"
+          className="text-sm font-medium text-brand-text-primary"
         >
-          Wedding date
+          This is for a wedding
         </label>
-        <input
-          type="date"
-          id="weddingDate"
-          name="weddingDate"
-          required={!notSureDate}
-          disabled={notSureDate}
-          className="w-full rounded-lg border border-brand-border bg-brand-bg px-4 py-3 text-brand-text-primary focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+        <Switch
+          id="isWedding"
+          checked={isWedding}
+          onCheckedChange={setIsWedding}
         />
-        <label className="mt-2 flex items-center gap-2">
-          <input
-            type="checkbox"
-            checked={notSureDate}
-            onChange={(e) => setNotSureDate(e.target.checked)}
-            className="size-4 rounded border-brand-border text-brand-primary accent-brand-primary"
-          />
-          <span className="text-sm text-brand-text-secondary">Not sure yet</span>
-        </label>
       </div>
+
+      {/* Wedding date */}
+      {isWedding && (
+        <div>
+          <label
+            htmlFor="weddingDate"
+            className="mb-1.5 block text-sm font-medium text-brand-text-primary"
+          >
+            Wedding date
+          </label>
+          <input
+            type="date"
+            id="weddingDate"
+            name="weddingDate"
+            required={!notSureDate}
+            disabled={notSureDate}
+            className="w-full rounded-lg border border-brand-border bg-brand-bg px-4 py-3 text-brand-text-primary focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+          />
+          <label className="mt-2 flex items-center gap-2">
+            <input
+              type="checkbox"
+              checked={notSureDate}
+              onChange={(e) => setNotSureDate(e.target.checked)}
+              className="size-4 rounded border-brand-border text-brand-primary accent-brand-primary"
+            />
+            <span className="text-sm text-brand-text-secondary">Not sure yet</span>
+          </label>
+        </div>
+      )}
 
       {/* Venue */}
       <div>
