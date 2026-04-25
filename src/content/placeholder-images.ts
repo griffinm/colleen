@@ -1,11 +1,9 @@
 /*
- * PLACEHOLDER — every image referenced here is an Unsplash stock photo
- * standing in until Colleen delivers real photography. Swap the `src` and
- * `alt` fields once replacements arrive; shape is stable.
- *
- * URL convention:
- *   https://images.unsplash.com/photo-{id}?w={w}&q=80&auto=format&fit=crop
- * where {w} is sized to the slot's max rendered width on a 2x display.
+ * PLACEHOLDER — image paths point at random selections from the
+ * `public/photos/` import. They are not yet matched to the slot they fill
+ * (hero vs. about portrait vs. signature style vs. BTS) — Colleen still needs
+ * to assign each photo to its intended role, and the `alt` text is a TODO
+ * until she does. Shape is stable; only `src` and `alt` should churn.
  */
 
 export interface PlaceholderImage {
@@ -13,68 +11,84 @@ export interface PlaceholderImage {
   alt: string;
 }
 
-const unsplash = (id: string, width: number): string =>
-  `https://images.unsplash.com/photo-${id}?w=${width}&q=80&auto=format&fit=crop`;
+export const heroImages: PlaceholderImage[] = [
+  {
+    src: "/photos/img-0607.jpg",
+    alt: "TODO(colleen): describe img-0607 — bride, setting, season, mood.",
+  },
+  {
+    src: "/photos/img-6303.jpg",
+    alt: "TODO(colleen): describe img-6303.",
+  },
+  {
+    src: "/photos/img-0606.jpg",
+    alt: "TODO(colleen): describe img-0606.",
+  },
+  {
+    src: "/photos/bc5a30fa-40d2-4007-99bc-3f0ab2711034.jpg",
+    alt: "TODO(colleen): describe bc5a30fa…711034.",
+  },
+  {
+    src: "/photos/img-2116.jpg",
+    alt: "TODO(colleen): describe img-2116.",
+  },
+];
 
-export const heroImage: PlaceholderImage = {
-  src: unsplash("1537633552985-df8429e8048b", 1200),
-  alt: "A bride and groom stand close on a pebble beach, her long veil drifting behind them toward the surf.",
-};
+export const heroImage: PlaceholderImage = heroImages[0];
 
-// PLACEHOLDER — until real photography arrives, reuse the home hero photo cropped
-// to the 1200×630 Open Graph ratio. Swap once brand photography is delivered; a
-// dedicated social share image (e.g. lockup + portrait) usually outperforms a
-// reused hero crop.
+// PLACEHOLDER — random landscape photo from the import standing in as the
+// social share card. A dedicated 1200×630 OG image (lockup + portrait) will
+// outperform a generic photo crop; swap once one is produced.
 export const ogImage = {
-  url: `https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=1200&h=630&q=80&auto=format&fit=crop`,
-  width: 1200,
-  height: 630,
-  alt: "A bride and groom stand close on a pebble beach, her long veil drifting behind them toward the surf.",
+  url: "/photos/img-5458.jpg",
+  width: 2400,
+  height: 1600,
+  alt: "TODO(colleen): describe img-5458 for social share preview.",
 } as const;
 
 export const aboutPortrait: PlaceholderImage = {
-  src: unsplash("1544005313-94ddf0286df2", 900),
-  alt: "A woman with loose brown hair smiles warmly into late-afternoon light, standing outdoors in an open field.",
+  src: "/photos/img-4982.jpg",
+  alt: "TODO(colleen): describe img-4982 — portrait of Colleen for the About page.",
 };
 
 export const signatureStyleImages: PlaceholderImage[] = [
   {
-    src: unsplash("1488426862026-3ee34a7d66df", 600),
-    alt: "A soft, natural bridal look — defined brows, warm flushed cheeks, and a hair-up style with loose strands.",
+    src: "/photos/img-7822.jpg",
+    alt: "TODO(colleen): describe img-7822.",
   },
   {
-    src: unsplash("1529626455594-4ff0802cfb7e", 600),
-    alt: "An auburn-haired bride in daylight, skin luminous, a soft terracotta lip and understated eye.",
+    src: "/photos/img-2115.jpg",
+    alt: "TODO(colleen): describe img-2115.",
   },
   {
-    src: unsplash("1502823403499-6ccfcf4fb453", 600),
-    alt: "A sculpted braided updo photographed in profile against low studio light — an editorial-leaning bridal look.",
+    src: "/photos/img-6597.jpg",
+    alt: "TODO(colleen): describe img-6597.",
   },
   {
-    src: unsplash("1597225244660-1cd128c64284", 600),
-    alt: "A neatly arranged flatlay of lipsticks in nude-to-berry tones on a blush background.",
+    src: "/photos/img-8545.jpg",
+    alt: "TODO(colleen): describe img-8545.",
   },
 ];
 
 export const behindTheScenesImages: PlaceholderImage[] = [
   {
-    src: unsplash("1580618672591-eb180b1a973f", 600),
-    alt: "A stylist blow-drying a bride's hair with a round brush in the getting-ready suite.",
+    src: "/photos/img-4956.jpg",
+    alt: "TODO(colleen): describe img-4956.",
   },
   {
-    src: unsplash("1457972729786-0411a3b2b626", 600),
-    alt: "Close-up of hands applying deep-red polish to a bride's nails during the morning prep.",
+    src: "/photos/four.jpg",
+    alt: "TODO(colleen): describe four.jpg.",
   },
   {
-    src: unsplash("1515934751635-c81c6bc9a2d8", 600),
-    alt: "Two wedding bands resting on a bed of pale-pink garden roses and baby's breath.",
+    src: "/photos/img-0372.jpg",
+    alt: "TODO(colleen): describe img-0372.",
   },
   {
-    src: unsplash("1529636798458-92182e662485", 600),
-    alt: "A lush bridal bouquet of pink, coral, and ivory blooms hanging from a wooden beam.",
+    src: "/photos/img-8793.jpg",
+    alt: "TODO(colleen): describe img-8793.",
   },
   {
-    src: unsplash("1522413452208-996ff3f3e740", 600),
-    alt: "A bride and groom's hands resting on a peach-rose bouquet, both wearing new wedding rings.",
+    src: "/photos/img-0945.png",
+    alt: "TODO(colleen): describe img-0945.",
   },
 ];

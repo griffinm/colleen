@@ -4,10 +4,12 @@ import Link from "next/link";
 import { MessageSquare, Palette, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CTABanner } from "@/components/cta-banner";
+import { HeroSlideshow } from "@/components/hero-slideshow";
 import { Reveal } from "@/components/reveal";
 import { TestimonialCard } from "@/components/testimonial-card";
 import {
   heroImage,
+  heroImages,
   ogImage,
   signatureStyleImages,
 } from "@/content/placeholder-images";
@@ -112,7 +114,7 @@ export default function Home() {
 
       {/* Hero */}
       <section className="-mt-[var(--nav-h)] bg-brand-primary pt-[var(--nav-h)] text-brand-text-primary">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 md:items-center md:py-28">
+        <div className="mx-auto grid max-w-7xl gap-6 px-6 pt-4 pb-12 md:grid-cols-2 md:items-center md:gap-12 md:py-28">
           <div>
             <h1 className="font-serif text-4xl font-light leading-tight md:text-5xl lg:text-6xl">
               Bridal makeup for Boston and Beyond.
@@ -132,16 +134,8 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          {/* PLACEHOLDER — Unsplash stock image until real hero photography arrives */}
-          <div className="relative aspect-[3/4] overflow-hidden rounded-xl bg-brand-primary-hover/30">
-            <Image
-              src={heroImage.src}
-              alt={heroImage.alt}
-              fill
-              priority
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover"
-            />
+          <div className="relative aspect-[3/4] overflow-hidden rounded-3xl">
+            <HeroSlideshow images={heroImages} />
           </div>
         </div>
       </section>
