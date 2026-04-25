@@ -4,6 +4,18 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --color-brand-primary: #d4a0a0;
+  --color-brand-primary-hover: #e8c4c4;
+  --color-brand-soft: #f5e6e0;
+  --color-brand-bg: #faf6f3;
+  --color-brand-bg-alt: #f0ece8;
+  --color-brand-accent: #8a9a7a;
+  --color-brand-text-primary: #2e2a28;
+  --color-brand-text-secondary: #4a3a35;
+  --color-brand-border: #ddd5cf;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -11,16 +23,6 @@
   --font-mono: var(--font-geist-mono);
   --font-serif: var(--font-playfair-display);
   --font-heading: var(--font-playfair-display);
-  /* Brand palette: Oxblood & Bone */
-  --color-oxblood: var(--oxblood);
-  --color-claret: var(--claret);
-  --color-blush: var(--blush);
-  --color-bone: var(--bone);
-  --color-parchment: var(--parchment);
-  --color-rule: var(--rule);
-  --color-smoke: var(--smoke);
-  --color-ink: var(--ink);
-  --color-brass: var(--brass);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -83,16 +85,6 @@
   --chart-3: oklch(0.50 0.02 65);
   --chart-4: oklch(0.40 0.015 55);
   --chart-5: oklch(0.30 0.01 50);
-  /* Brand palette: Oxblood & Bone */
-  --oxblood: #881337;
-  --claret: #9f1239;
-  --blush: #fecdd3;
-  --bone: #fafaf9;
-  --parchment: #f5f5f4;
-  --rule: #e7e5e4;
-  --smoke: #57534e;
-  --ink: #1c1917;
-  --brass: #b45309;
   --nav-h: 4.5rem;
   --radius: 0.625rem;
   --sidebar: oklch(0.96 0.008 75);
@@ -110,7 +102,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-brand-bg text-brand-text-primary;
   }
   html {
     @apply font-sans;

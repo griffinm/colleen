@@ -4,9 +4,8 @@ import { navLinks, ctaLink } from "@/content/navigation";
 
 export function Footer() {
   return (
-    <footer className="bg-ink text-bone">
-      {/* Decorative brass rule */}
-      <div className="h-px bg-brass" aria-hidden="true" />
+    <footer className="bg-brand-text-primary text-brand-bg">
+      <div className="h-px bg-brand-accent" aria-hidden="true" />
 
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 md:grid-cols-3">
@@ -21,7 +20,7 @@ export function Footer() {
                 className="h-10 w-auto"
               />
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-smoke">
+            <p className="mt-4 text-sm leading-relaxed text-brand-bg/70">
               Wedding makeup artist serving Boston, Cape Cod, the North Shore,
               the Berkshires, and all of New England.
             </p>
@@ -29,7 +28,7 @@ export function Footer() {
 
           {/* Quick links */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-brass">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
               Pages
             </h3>
             <ul className="mt-4 flex flex-col gap-2">
@@ -37,7 +36,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-smoke transition-colors hover:text-bone"
+                    className="text-sm text-brand-bg/70 transition-colors hover:text-brand-bg"
                   >
                     {link.label}
                   </Link>
@@ -46,7 +45,7 @@ export function Footer() {
               <li>
                 <Link
                   href={ctaLink.href}
-                  className="text-sm text-smoke transition-colors hover:text-bone"
+                  className="text-sm text-brand-bg/70 transition-colors hover:text-brand-bg"
                 >
                   {ctaLink.label}
                 </Link>
@@ -56,7 +55,7 @@ export function Footer() {
 
           {/* Contact / Social */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-brass">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
               Connect
             </h3>
             <ul className="mt-4 flex flex-col gap-2">
@@ -66,7 +65,7 @@ export function Footer() {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-smoke transition-colors hover:text-bone"
+                  className="text-sm text-brand-bg/70 transition-colors hover:text-brand-bg"
                 >
                   Instagram
                 </a>
@@ -76,7 +75,7 @@ export function Footer() {
                   href="https://theknot.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-smoke transition-colors hover:text-bone"
+                  className="text-sm text-brand-bg/70 transition-colors hover:text-brand-bg"
                 >
                   The Knot
                 </a>
@@ -85,7 +84,7 @@ export function Footer() {
                 {/* PLACEHOLDER — replace with real email */}
                 <a
                   href="mailto:hello@glamourbycolleen.com"
-                  className="text-sm text-smoke transition-colors hover:text-bone"
+                  className="text-sm text-brand-bg/70 transition-colors hover:text-brand-bg"
                 >
                   hello@glamourbycolleen.com
                 </a>
@@ -95,7 +94,7 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 border-t border-smoke/20 pt-8 text-center text-xs text-smoke">
+        <div className="mt-12 border-t border-brand-bg/20 pt-8 text-center text-xs text-brand-bg/70">
           <p>
             &copy; {new Date().getFullYear()} Glamour By Colleen. All rights
             reserved.

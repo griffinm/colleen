@@ -9,7 +9,21 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "behold.pictures",
+        pathname: "/**",
+      },
     ],
+  },
+  async redirects() {
+    return [
+      {
+        source: "/portfolio",
+        destination: "/gallery",
+        permanent: true,
+      },
+    ];
   },
 };
 

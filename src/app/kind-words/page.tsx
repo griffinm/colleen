@@ -56,12 +56,12 @@ export default function KindWordsPage() {
   return (
     <>
       {/* Intro */}
-      <section className="bg-bone px-6 py-16 md:py-24">
+      <section className="bg-brand-bg px-6 py-16 md:py-24">
         <div className="mx-auto max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-brass">
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
             Kind Words
           </p>
-          <h1 className="mt-4 font-serif text-4xl font-light text-ink md:text-5xl">
+          <h1 className="mt-4 font-serif text-4xl font-light text-brand-text-primary md:text-5xl">
             What brides say.
           </h1>
         </div>
@@ -76,11 +76,11 @@ export default function KindWordsPage() {
           <section
             key={category.key}
             className={`px-6 py-16 md:py-20 ${
-              index % 2 === 0 ? "bg-parchment" : "bg-bone"
+              index % 2 === 0 ? "bg-brand-bg-alt" : "bg-brand-bg"
             }`}
           >
             <Reveal className="mx-auto max-w-3xl">
-              <h2 className="font-serif text-2xl font-light text-oxblood md:text-3xl">
+              <h2 className="font-serif text-2xl font-light text-brand-primary md:text-3xl">
                 {category.heading}
               </h2>
               <div className="mt-10 space-y-10">
@@ -97,12 +97,12 @@ export default function KindWordsPage() {
       })}
 
       {/* Google Reviews Link */}
-      <section className="bg-bone px-6 py-12 text-center">
+      <section className="bg-brand-bg px-6 py-12 text-center">
         <a
           href="https://google.com/maps" // PLACEHOLDER — replace with real Google Business URL
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm font-medium text-claret transition-colors hover:text-oxblood"
+          className="text-sm font-medium text-brand-primary-hover transition-colors hover:text-brand-primary"
         >
           See all reviews on Google &rarr;
         </a>
