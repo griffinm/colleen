@@ -5,13 +5,13 @@ import { MessageSquare, Palette, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CTABanner } from "@/components/cta-banner";
 import { HeroSlideshow } from "@/components/hero-slideshow";
+import InstagramFeed from "@/components/instagram-feed";
 import { Reveal } from "@/components/reveal";
 import { TestimonialCard } from "@/components/testimonial-card";
 import {
   heroImage,
   heroImages,
   ogImage,
-  signatureStyleImages,
 } from "@/content/placeholder-images";
 import { testimonials } from "@/content/testimonials";
 import { BASE_URL, SITE_NAME } from "@/lib/constants";
@@ -140,34 +140,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Signature Style Strip */}
-      <section className="bg-brand-bg-alt px-6 py-16 md:py-20">
-        <Reveal className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            {/* PLACEHOLDER — Unsplash stock images until signature-style portfolio photos arrive */}
-            {signatureStyleImages.map((image) => (
-              <div
-                key={image.src}
-                className="relative aspect-[4/5] overflow-hidden rounded-lg bg-brand-border"
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  sizes="(min-width: 768px) 25vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
-          <p className="mx-auto mt-10 max-w-2xl text-center font-serif text-xl leading-relaxed italic text-brand-text-primary">
-            {/* PLACEHOLDER — needs Colleen's own words */}
-            &ldquo;Natural, luminous, and unmistakably you &mdash; the kind of
-            makeup that photographs beautifully and still looks like you at the
-            end of the night.&rdquo;
-          </p>
-        </Reveal>
-      </section>
+      <InstagramFeed />
 
       {/* How It Works — 3-Step Process */}
       <section className="bg-brand-bg px-6 py-16 md:py-20">
