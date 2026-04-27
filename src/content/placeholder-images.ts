@@ -37,8 +37,8 @@ export const heroImages: PlaceholderImage[] = [
 export const heroImage: PlaceholderImage = heroImages[0];
 
 export const aboutPortrait: PlaceholderImage = {
-  src: "/photos/img-3110.jpg",
-  alt: "TODO(colleen): describe img-3108 — portrait of Colleen for the About page.",
+  src: "/photos/img-0607.jpg",
+  alt: "TODO(colleen): describe img-0607 — portrait of Colleen for the About page.",
 };
 
 // PLACEHOLDER — reuses the About portrait as the social share card across all
@@ -55,10 +55,6 @@ export const signatureStyleImages: PlaceholderImage[] = [
   {
     src: "/photos/img-7822.jpg",
     alt: "TODO(colleen): describe img-7822.",
-  },
-  {
-    src: "/photos/img-2115.jpg",
-    alt: "TODO(colleen): describe img-2115.",
   },
   {
     src: "/photos/img-6597.jpg",
