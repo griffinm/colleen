@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
 import { Reveal } from "@/components/reveal";
-import { ogImage } from "@/content/placeholder-images";
+import { ogImage } from "@/content/images";
 import { SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {

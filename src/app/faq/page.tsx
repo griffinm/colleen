@@ -8,7 +8,7 @@ import {
 import { CTABanner } from "@/components/cta-banner";
 import { Reveal } from "@/components/reveal";
 import { faqEntries } from "@/content/faq";
-import { ogImage } from "@/content/placeholder-images";
+import { ogImage } from "@/content/images";
 import { SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {

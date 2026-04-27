@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { CTABanner } from "@/components/cta-banner";
 import { Reveal } from "@/components/reveal";
 import { TestimonialCard } from "@/components/testimonial-card";
-import { ogImage } from "@/content/placeholder-images";
+import { ogImage } from "@/content/images";
 import {
   testimonials,
   type TestimonialCategory,

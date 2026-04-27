@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { CTABanner } from "@/components/cta-banner";
 import { Reveal } from "@/components/reveal";
-import { aboutPortrait, ogImage } from "@/content/placeholder-images";
+import { aboutPortrait, ogImage } from "@/content/images";
 import { SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {

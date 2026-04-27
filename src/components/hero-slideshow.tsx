@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import type { PlaceholderImage } from "@/content/placeholder-images";
+import type { PlaceholderImage } from "@/content/images";
 
 interface HeroSlideshowProps {
   images: PlaceholderImage[];

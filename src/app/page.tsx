@@ -12,7 +12,7 @@ import {
   heroImage,
   heroImages,
   ogImage,
-} from "@/content/placeholder-images";
+} from "@/content/images";
 import { testimonials } from "@/content/testimonials";
 import { BASE_URL, SITE_NAME } from "@/lib/constants";
 
